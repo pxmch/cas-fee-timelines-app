@@ -1,0 +1,24 @@
+<div class="mdl-grid" *ngIf="!(timeline | async)?.is_private">
+  <div class="mdl-cell mdl-cell--12-col mdl-color--white event-box">
+    <div *ngIf="showMetadata" class="timeline__metadata">
+      Timeline «{{ (timeline | async)?.title }}»<br>
+      {{ (timeline | async)?.description }} <br>
+      Publiziert am {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }} von xyz
+    </div>
+    <div class="event-box__timeline"></div>
+    <ul class="event-list">
+      <li *ngFor="let ev of events | async">
+        <div class="event-list__item">
+          {{ev.start * 1000 | date:"dd.MM.yyyy"}}<span *ngIf="ev.end"> - {{ev.end * 1000 | date:"dd.MM.yyyy"}}</span><br>
+          <b>{{ev.title}}</b><br>
+          {{ev.description}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="mdl-grid" *ngIf="(timeline | async)?.is_private">
+  <div class="mdl-cell mdl-cell--12-col">
+    Die angeforderte Timeline ist nicht (mehr) öffentlich erreichbar.
+  </div>
+</div>

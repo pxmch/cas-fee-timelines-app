@@ -1,0 +1,22 @@
+<h1>
+  Timeline «{{ (timeline | async)?.title }}»
+</h1>
+<div class="mdl-grid" *ngIf="!(timeline | async)?.is_private">
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone  mdl-cell--bottom">
+    {{ (timeline | async)?.description }}
+  </div>
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-typography--text-right mdl-cell--bottom">
+    Publiziert am {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }}<br>von Username
+  </div>
+  <div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-color--white event-box">
+    <timeline [showMetadata]=false></timeline>
+  </div>
+  <div class="mdl-cell mdl-cell--12-col">
+    Embedlink: <a [routerLink]="['/timeline/embed/'+(timeline | async)?.$key]" target="_blank">/view/embed/{{ (timeline | async)?.$key }}</a>
+  </div>
+</div>
+<div class="mdl-grid" *ngIf="(timeline | async)?.is_private">
+  <div class="mdl-cell mdl-cell--12-col">
+    Die angeforderte Timeline ist nicht (mehr) öffentlich erreichbar.
+  </div>
+</div>

@@ -1,0 +1,32 @@
+  <header class="main-header" *ngIf="!isEmbedView">
+    <div class="mdl-grid mdl-grid--no-spacing main-header__wrapper">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--4-col-phone main-header__title">
+        <a [routerLink]="['']">Timelines</a>
+      </div>
+      <nav class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--4-col-phone main-nav">
+          <a [routerLink]="['/timeline']" routerLinkActive="active">Timelines</a>
+          <a [routerLink]="['/about']" routerLinkActive="active">Infos</a>
+          <login-status></login-status>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content">
+      <router-outlet></router-outlet>
+  </main>
+  <footer class="main-footer" *ngIf="!isEmbedView">
+    <div class="main-footer__wrapper mdl-grid">
+      <div class="main-footer__navigation mdl-cell mdl-cell--6-col mdl-cell--5-col-tablet mdl-cell--4-col-phone">
+        <div class="main-footer__logo">Timelines</div>
+        <ul class="main-footer__links">
+          <li><a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+          <li><a [routerLink]="['/timeline']" routerLinkActive="active">Timelines</a></li>
+          <li><a [routerLink]="['/about']" routerLinkActive="active">Infos</a></li>
+          <li><a [routerLink]="['/timeline-manager']">Timeline Manager</a></li>
+        </ul>
+      </div>
+      <div class="main-footer__meta mdl-cell mdl-cell--bottom mdl-cell--6-col mdl-cell--3-col-tablet mdl-cell--4-col-phone">
+        <div class="main-footer__legal">&copy;2016 by Timelines</div>
+      </div>
+    </div>
+  </footer>
+

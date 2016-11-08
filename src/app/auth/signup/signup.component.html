@@ -1,0 +1,27 @@
+<h1>Account eröffnen</h1>
+<p>
+  Registrieren Sie sich kostenlos, um selbst Timelines anzulegen.<br>
+  Bitte füllen Sie alle Felder aus.
+</p>
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm" class="register-mask">
+  <div *ngIf="message">{{message}}</div>
+  <div class="mdl-textfield mdl-js-textfield register-mask__field">
+    <input id="username" name="username" type="text" [(ngModel)]="username" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="username">Name (Author der Timelines)</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield register-mask__field">
+    <input id="userId" name="userId" type="email" [(ngModel)]="userId" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="userId">E-Mail</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield register-mask__field">
+    <input id="passwd" name="passwd" type="password" [(ngModel)]="passwd" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="passwd">Passwort</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield register-mask__field">
+    <input id="passwdConfirm" name="passwdConfirm" type="password" [(ngModel)]="passwdConfirm" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="passwdConfirm">Passwort wiederholen</label>
+  </div>
+  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent register-mask__button">
+    Account eröffnen
+  </button>
+</form>

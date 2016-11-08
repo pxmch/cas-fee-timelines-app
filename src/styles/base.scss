@@ -1,0 +1,45 @@
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #FAFAFA;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+h1 {
+  margin: 24px 0 12px;
+  font-size: 36px;
+  line-height: 1.25;
+}
+
+h2 {
+  margin: 24px 0 12px;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+h3 {
+  margin: 24px 0 12px;
+  line-height: 1.25;
+  font-size: 24px;
+}
+
+h4 {
+  margin: 24px 0 12px;
+  line-height: 1.25;
+  font-size: 18px;
+}
+
+ul, li {
+  padding: 0;
+  list-style-type: none;
+}
+
+b {
+  font-weight: 600;
+}
+

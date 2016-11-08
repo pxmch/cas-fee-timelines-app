@@ -1,0 +1,9 @@
+<ul class="timeline-list">
+  <li *ngFor="let tl of timelines | async" class="{{cssclasses}}">
+    <timeline-teaser
+      [title]=tl.title
+      [description]=tl.description
+      [id]=tl.$key
+    ></timeline-teaser>
+  </li>
+</ul>
