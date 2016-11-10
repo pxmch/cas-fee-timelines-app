@@ -1,6 +1,8 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import { OnInit, OnDestroy } from '@angular/core';
+import { OnInit, OnDestroy, AfterViewChecked } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+
+declare let componentHandler: any;
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent implements OnInit, OnDestroy  {
+export class AppComponent implements OnInit, OnDestroy, AfterViewChecked  {
 
   private title = 'Timeline-App';
   private sub: any;
@@ -28,6 +30,15 @@ export class AppComponent implements OnInit, OnDestroy  {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  ngAfterViewChecked() {
+    /* update of material design lite elements, when dynamically created
+       @see https://denisvuyka.github.io/2016/06/06/angular2-material.html
+     */
+    if (componentHandler) {
+      componentHandler.upgradeAllRegistered();
+    }
   }
 
 }
