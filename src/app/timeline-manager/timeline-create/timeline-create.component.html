@@ -1,0 +1,14 @@
+
+<h1>Timeline erstellen</h1>
+
+<timeline-form #tlForm></timeline-form>
+<button
+  [disabled]="!tlForm.getIsValid()"
+  (click)="save(tlForm)"
+  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent timeline-mask__button"
+>
+  Speichern
+</button>
+<a [routerLink]="['/timeline-manager']" class="mdl-button mdl-js-button timeline-mask__button">
+  Abbrechen
+</a>

@@ -1,14 +1,20 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Inject} from '@angular/core';
 import {Observable} from "rxjs/Rx";
-import {AngularFireDatabase} from "angularfire2/angularfire2";
+import {AngularFireDatabase, FirebaseRef} from "angularfire2/angularfire2";
 import {Timeline} from "./timeline";
 import {Event} from "./event";
+import {Subject} from "rxjs/Subject";
 
 @Injectable()
 export class TimelinesService {
 
-  constructor(private db: AngularFireDatabase) { }
+  fbRef: any;
 
+  constructor(private db: AngularFireDatabase, @Inject(FirebaseRef) fb) {
+
+    this.fbRef = fb.database().ref();
+
+  }
 
   getTimelineByKey(key: string): Observable<Timeline> {
     return this.db.object('/timelines/'+key)
@@ -40,5 +46,42 @@ export class TimelinesService {
       .map(tpu => tpu.map (timeline => this.db.object('/timelines/'+timeline.$key))) 
       .concatMap(fbObjObs => Observable.combineLatest(fbObjObs)).do(console.log);  
 
-    return timelinesUser; }
+    return timelinesUser;
+   }
+
+  createNewTimeline(userId: string, timeline: any) : Observable<any> {
+    const ctime = new Date().toISOString();
+    const tlData = Object.assign({}, {last_changed: ctime, create_date: ctime }, timeline);
+
+    const generatedKey = this.fbRef.child('timelines').push().key;
+
+    let storageData = {};
+
+    storageData["timelines/" + generatedKey] = tlData;
+    storageData[`timelinesPerUser/${userId}/${generatedKey}`] = true;
+
+
+    return this.firebaseUpdate(storageData);
+  }
+
+  firebaseUpdate(storageData) {
+    const subject = new Subject();
+
+    this.fbRef.update(storageData)
+      .then(
+        val => {
+          subject.next(val);
+          subject.complete();
+
+        },
+        err => {
+          subject.error(err);
+          subject.complete();
+        }
+      );
+
+    return subject.asObservable();
+  }
+
+
 }

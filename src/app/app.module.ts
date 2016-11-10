@@ -18,9 +18,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/concatMap';
 import 'rxjs/add/operator/combineLatest';
 
-//directives
-import {MDLUpdateElementDirective} from "./shared/mdl-update-elements.directive";
-
 //services
 import {TimelinesService} from "./shared/model/timelines.service";
 
@@ -39,8 +36,7 @@ var firebaseAuthConfig = {
   declarations: [
     AboutComponent,
     AppComponent,
-    HomeComponent,
-    MDLUpdateElementDirective
+    HomeComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
