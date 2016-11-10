@@ -1,48 +1,29 @@
-<h3>Timeline-Manager (Backend)</h3>
+<h1>Timeline-Manager</h1>
 
-<ul>
-  <li *ngFor="let tlu of timelinesForUser | async">
-    {{ tlu | json}}
-  </li>
-</ul>
+<nav class="page-actions">
+  <button class="mdl-button mdl-js-button mdl-button--raised">
+    + Neue Timeline
+  </button>
+</nav>
 
-
-
-
-<!--<h3>Timeline-Manager (Backend)</h3>
-
-<form>
-
-  <input type="text" [(ngModel)]="timeline_title" name="userInputTitle">
-  <input type="text" [(ngModel)]="timeline_description" name="userInputDescription">
-  <button (click)="addTimeline(timeline_title, timeline_description)">Add Timeline</button>
-</form>
-
-<div class="grid-item" *ngFor="let timeline of timelines | async">
-
-  <div class="timeline-title">
-    {{timeline.title}} :: {{timeline.description}}
-
-    <button class="deleteTimelineButton" type="button" (click)="deleteTimeline(timeline)">Delete Timeline</button>
-  </div>
-
-  <form>
-
-    <input type="text" [(ngModel)]="timeline.event_date" name="userInputDate + timeline.key" #eventDate="ngModel">
-    <input type="text" [(ngModel)]="timeline.event_description" name="userInputEvent" #eventDescription="ngModel">
-
-    <button class="addEventButton" type="button" (click)="addEvent(timeline)">Add Event</button>
-
-    <div class="event-title">Events:</div>
-
-    <div *ngFor="let datapoint of timeline.datapoints | values; let i = index">
-      <input type="text" [(ngModel)]="datapoint.time" name="datapointTime +{{i}}" >
-      <input type="text" [(ngModel)]="datapoint.event" name="datapointEvent +{{i}}" >
-      <button class="editEventButton" type="button" (click)="editEvent(timeline, datapoint)">Edit Event</button>
-      <button class="deleteEventButton" type="button" (click)="deleteEvent(timeline, datapoint)">Delete Event</button>
-    </div>
-
-  </form>
-
-</div>
--->
+<table class="timeline-edit-list mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+  <thead>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric">Titel</th>
+    <th class="mdl-data-table__cell--non-numeric">Beschreibung</th>
+    <th>Erstellt</th>
+    <th class="mdl-data-table__cell--non-numeric"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tlu of timelinesForUser | async" >
+    <td class="mdl-data-table__cell--non-numeric"><b>{{tlu.title}}</b></td>
+    <td class="mdl-data-table__cell--non-numeric">{{tlu.description | trunc:50 }}</td>
+    <td>{{tlu.created_date | date:"dd.MM.yyyy"}}</td>
+    <td>
+      <a class="{{tlu.$key}}"></a>
+        <a href=""><i class="material-icons">edit</i></a>
+    </td>
+  </tr>
+  </tbody>
+</table>

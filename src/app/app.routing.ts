@@ -13,7 +13,6 @@ const appRoutes: Routes = [
       return System.import('./auth/auth.routing').then(result => result.AuthModule);
     }
   },
-  { path: 'timeline-manager', component: TimelineManagerComponent, canActivate: [ LoginGuardService ] },
   { path: '', component: HomeComponent }
 ];
 

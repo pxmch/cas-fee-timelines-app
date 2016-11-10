@@ -4,24 +4,20 @@ import {OnInit} from '@angular/core'; 
 import {TimelinesService} from "../shared/model/timelines.service"; 
 import {Timeline} from '../shared/model/timeline'
 
-
   @Component({ 
   selector: 'backend', 
-    templateUrl: './timeline-manager.component.html', 
-    styleUrls: ['./timeline-manager.component.scss']})  
+  templateUrl: './timeline-manager.component.html', 
+  styleUrls: ['./timeline-manager.component.scss'
+]})  
 
-
-  export class TimelineManagerComponent implements OnInit {  
-      timelinesForUser: Observable<Timeline[]>;  
-
+export class TimelineManagerComponent implements OnInit {  
+    timelinesForUser: Observable<Timeline[]>;  
     constructor(private timelinesService: TimelinesService) {}  
 
     ngOnInit() { 
       this.timelinesForUser = this.timelinesService.getTimelinesForUser('-KPio2Etua4oo1i73dfx'); 
-
     } 
-
-    }
+}
 
 
 

@@ -11,7 +11,7 @@ import {AuthModule} from './auth/auth.module';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {TimelineModule} from "./timeline/timeline.module";
-import {TimelineManagerComponent} from "./timeline-manager/timeline-manager.component";
+import {TimelineManagerModule} from "./timeline-manager/timeline-manager.module";
 
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
@@ -40,8 +40,7 @@ var firebaseAuthConfig = {
     AboutComponent,
     AppComponent,
     HomeComponent,
-    MDLUpdateElementDirective,
-    TimelineManagerComponent
+    MDLUpdateElementDirective
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
@@ -51,7 +50,8 @@ var firebaseAuthConfig = {
     HttpModule,
     JsonpModule,
     routing,
-    TimelineModule
+    TimelineModule,
+    TimelineManagerModule
   ],
   providers: [appRoutingProviders, TimelinesService],
   bootstrap: [AppComponent]
