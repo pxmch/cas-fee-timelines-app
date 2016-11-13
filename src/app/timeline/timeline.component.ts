@@ -21,7 +21,6 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
-
     this.timeline = this.timelinesService.getTimelineByKey(id);
     this.events = this.timelinesService.getEventsForTimeline(id);
   }

@@ -12,10 +12,12 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class TruncPipe implements PipeTransform {
   transform(text: string, limit = 15, suffix = '...'): any {
+    if (!text) {
+      return '';
+    }
     if (text.length <= limit) {
       return text;
     }
-
     return text.substring(0, limit) + suffix;
   }
 }

@@ -17,6 +17,12 @@ export class TimelineManagerComponent implements OnInit {  
     ngOnInit() { 
       this.timelinesForUser = this.timelinesService.getTimelinesForUser('-KPio2Etua4oo1i73dfx'); 
     } 
+
+    deleteTimeline(key: string) {
+      if (window.confirm("Wirklich löschen?")) {
+        this.timelinesService.deleteTimelineByKey(key, '-KPio2Etua4oo1i73dfx');
+      }
+    }
 }
 
 

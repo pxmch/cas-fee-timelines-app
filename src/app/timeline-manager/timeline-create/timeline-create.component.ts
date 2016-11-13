@@ -18,8 +18,8 @@ export class TimelineCreateComponent implements OnInit {
   save(form) {
     this.timelinesService.createNewTimeline('-KPio2Etua4oo1i73dfx', form.getFormValue())
       .subscribe(
-        () => {
-          this.router.navigateByUrl('/timeline-manager');
+        val => {
+          this.router.navigateByUrl('/timeline-manager/edit/'+val);
         },
         err => alert(`Bei Speichern ist ein Fehler aufgetreten: ${err}`)
       );

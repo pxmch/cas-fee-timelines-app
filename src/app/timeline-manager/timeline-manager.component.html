@@ -6,7 +6,7 @@
   </a>
 </nav>
 
-<table class="timeline-edit-list mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+<table class="timeline-edit-list mdl-data-table mdl-js-data-table mdl-shadow--2dp">
   <thead>
   <tr>
     <th></th>
@@ -26,8 +26,8 @@
     <td class="mdl-data-table__cell--non-numeric">{{tlu.description | trunc:50 }}</td>
     <td>{{tlu.created_date | date:"dd.MM.yyyy"}}</td>
     <td>
-      <a class="{{tlu.$key}}"></a>
-        <a href=""><i class="material-icons">edit</i></a>
+        <a [routerLink]="['/timeline-manager/edit/', tlu.$key]"><i class="material-icons">edit</i></a>
+        <a (click)="deleteTimeline(tlu.$key)"><i class="material-icons">delete</i></a>
     </td>
   </tr>
   </tbody>
