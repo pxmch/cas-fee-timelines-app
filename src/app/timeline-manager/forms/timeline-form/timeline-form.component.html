@@ -1,23 +1,24 @@
 <form [formGroup]="timelineForm" autocomplete="off" class="timeline-mask">
   <fieldset>
-  <div class="mdl-textfield mdl-js-textfield timeline-mask__field">
-    <input id="title" name="title" type="text"  formControlName="title" class="mdl-textfield__input">
-    <label class="mdl-textfield__label" for="title">Titel der Timeline</label>
-  </div>
-  <div class="mdl-textfield mdl-js-textfield timeline-mask__field">
-    <textarea class="mdl-textfield__input"
-              name="description"
-              type="text"
-              formControlName="description"
-              type="text"
-              rows= "3"
-              id="description">
-    </textarea>
-    <label class="mdl-textfield__label" for="description">Beschreibung der Timeline</label>
-  </div>
-  <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect timeline-mask__field" for="isPrivate">
-    <input type="checkbox" id="isPrivate" name="isPrivate" formControlName="isPrivate" class="mdl-switch__input">
-    <span class="mdl-switch__label">Timeline öffentlich sichtbar</span>
-  </label>
+    <div class="mdl-textfield mdl-js-textfield timeline-mask__field">
+      <input id="title" name="title" type="text"  formControlName="title" class="mdl-textfield__input">
+      <label class="mdl-textfield__label" for="title">Titel der Timeline</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield timeline-mask__field">
+      <textarea class="mdl-textfield__input"
+                name="description"
+                type="text"
+                formControlName="description"
+                type="text"
+                rows= "3"
+                id="description">
+      </textarea>
+      <label class="mdl-textfield__label" for="description">Beschreibung der Timeline</label>
+    </div>
+    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect timeline-mask__field" for="is_private">
+      <input type="checkbox" id="is_private" name="is_private" formControlName="is_private" class="mdl-switch__input">
+      <span class="mdl-switch__label">Timeline öffentlich sichtbar</span>
+    </label>
+    <input id="created_date" type="hidden"  formControlName="created_date">
   </fieldset>
 </form>

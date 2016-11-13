@@ -4,21 +4,18 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {routing, appRoutingProviders} from './app.routing';
 import {AuthMethods, AngularFireModule} from "angularfire2";
-
-//own modules and components
-import {AppComponent} from './app.component';
-import {AuthModule} from './auth/auth.module';
-import {HomeComponent} from './home/home.component';
-import {AboutComponent} from './about/about.component';
-import {TimelineModule} from "./timeline/timeline.module";
-import {TimelineManagerModule} from "./timeline-manager/timeline-manager.module";
-
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/concatMap';
 import 'rxjs/add/operator/combineLatest';
 
-//services
+import {AboutComponent} from './about/about.component';
+import {AppComponent} from './app.component';
+import {AuthModule} from './auth/auth.module';
+import {HomeComponent} from './home/home.component';
+import {TimelineManagerModule} from "./timeline-manager/timeline-manager.module";
+import {TimelineModule} from "./timeline/timeline.module";
+import {TimelineResolve} from "./shared/resolves/timeline.resolve";
 import {TimelinesService} from "./shared/model/timelines.service";
 
 var firebaseConfig = {
@@ -49,7 +46,11 @@ var firebaseAuthConfig = {
     TimelineModule,
     TimelineManagerModule
   ],
-  providers: [appRoutingProviders, TimelinesService],
+  providers: [
+    appRoutingProviders,
+    TimelineResolve,
+    TimelinesService
+  ],
   bootstrap: [AppComponent]
 })
 

@@ -12,22 +12,22 @@
     <th></th>
     <th class="mdl-data-table__cell--non-numeric">Titel</th>
     <th class="mdl-data-table__cell--non-numeric">Beschreibung</th>
-    <th>Erstellt</th>
+    <th>Letzte Änderung</th>
     <th class="mdl-data-table__cell--non-numeric"></th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let tlu of timelinesForUser | async" >
     <td>
-      <span *ngIf="tlu.is_private"><i class="material-icons timeline-item__visibility-indicator">visibility_off</i></span>
-      <span *ngIf="!tlu.is_private"><i class="material-icons timeline-item__visibility-indicator">visibility</i></span>
+      <span *ngIf="!tlu.is_private"><i class="material-icons timeline-item__visibility-indicator">visibility_off</i></span>
+      <span *ngIf="tlu.is_private"><i class="material-icons timeline-item__visibility-indicator">visibility</i></span>
     </td>
     <td class="mdl-data-table__cell--non-numeric"><b>{{tlu.title}}</b></td>
     <td class="mdl-data-table__cell--non-numeric">{{tlu.description | trunc:50 }}</td>
-    <td>{{tlu.created_date | date:"dd.MM.yyyy"}}</td>
+    <td>{{tlu.last_changed | date:"dd.MM.yyyy"}}</td>
     <td>
-        <a [routerLink]="['/timeline-manager/edit/', tlu.$key]"><i class="material-icons">edit</i></a>
-        <a (click)="deleteTimeline(tlu.$key)"><i class="material-icons">delete</i></a>
+      <a (click)="deleteTimeline(tlu.$key)"><i class="material-icons">delete</i></a>
+      <a [routerLink]="['/timeline-manager/edit/', tlu.$key]"><i class="material-icons">edit</i></a>
     </td>
   </tr>
   </tbody>

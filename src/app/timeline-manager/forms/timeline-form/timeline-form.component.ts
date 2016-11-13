@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import {Component, OnInit, OnChanges, Input, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -7,16 +7,26 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./timeline-form.component.scss']
 })
 
-export class TimelineFormComponent implements OnInit {
+export class TimelineFormComponent implements OnInit, OnChanges {
 
   timelineForm: FormGroup;
+
+  @Input()
+  prefilledData: any;
 
   constructor(private fb: FormBuilder) {
     this.timelineForm = this.fb.group({
       title: ['',Validators.required],
       description: ['',Validators.required],
-      isPrivate: ['']
+      is_private: [''],
+      created_date: ['']
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['prefilledData']) {
+      this.timelineForm.patchValue(changes['prefilledData'].currentValue)
+    }
   }
 
   ngOnInit() {
