@@ -50,7 +50,7 @@ export class TimelinesService {
 
   createNewTimeline(userId: string, timeline: any) : Observable<any> {
     const ctime = new Date().toISOString();
-    const timelineData = Object.assign({}, {last_changed: ctime, create_dated: ctime }, timeline);
+    const timelineData = Object.assign({}, timeline, {last_changed: ctime, created_date: ctime });
 
     const generatedKey = this.fbRef.child('timelines').push().key;
 
@@ -73,32 +73,19 @@ export class TimelinesService {
         }
       );
     return subject.asObservable();
-
-
-    //return Observable.fromPromise(this.fbRef.update(dataObject));
-    //return this.firebaseUpdate(dataObject, generatedKey);
-
   }
 
-/*
-  firebaseUpdate(storageData) {
-    const subject = new Subject();
+  updateTimeline(key: string, timeline: any) : Observable<any> {
+    const ctime = new Date().toISOString();
+    const timelineData = Object.assign({}, timeline, {last_changed: ctime});
+    console.log(timelineData);
+    delete(timelineData.$key);
+    console.log(timelineData);
 
-    this.fbRef.update(storageData)
-      .then(
-        val => {
-          subject.next(val);
-          subject.complete();
-
-        },
-        err => {
-          subject.error(err);
-          subject.complete();
-        }
-      );
-    return subject.asObservable();
+    let dataObject = {};
+    dataObject["timelines/" + key] = timelineData;
+    return Observable.fromPromise(this.fbRef.update(dataObject));
   }
-*/
 
   deleteTimelineByKey (key: string, userId: string) : Observable<any> {
     let dataObject = {};
