@@ -1,7 +1,7 @@
 <h1>
   Timeline «{{ (timeline | async)?.title }}»
 </h1>
-<div class="mdl-grid" *ngIf="!(timeline | async)?.is_private">
+<div class="mdl-grid" *ngIf="(timeline | async)?.is_public">
   <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone  mdl-cell--bottom">
     {{ (timeline | async)?.description }}
   </div>
@@ -15,7 +15,7 @@
     Embedlink: <a [routerLink]="['/timeline/embed/'+(timeline | async)?.$key]" target="_blank">/view/embed/{{ (timeline | async)?.$key }}</a>
   </div>
 </div>
-<div class="mdl-grid" *ngIf="(timeline | async)?.is_private">
+<div class="mdl-grid" *ngIf="!(timeline | async)?.is_public">
   <div class="mdl-cell mdl-cell--12-col">
     Die angeforderte Timeline ist nicht (mehr) öffentlich erreichbar.
   </div>

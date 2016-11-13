@@ -78,9 +78,7 @@ export class TimelinesService {
   updateTimeline(key: string, timeline: any) : Observable<any> {
     const ctime = new Date().toISOString();
     const timelineData = Object.assign({}, timeline, {last_changed: ctime});
-    console.log(timelineData);
     delete(timelineData.$key);
-    console.log(timelineData);
 
     let dataObject = {};
     dataObject["timelines/" + key] = timelineData;

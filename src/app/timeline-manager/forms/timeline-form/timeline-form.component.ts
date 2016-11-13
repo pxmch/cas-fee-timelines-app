@@ -18,7 +18,7 @@ export class TimelineFormComponent implements OnInit, OnChanges {
     this.timelineForm = this.fb.group({
       title: ['',Validators.required],
       description: ['',Validators.required],
-      is_private: [''],
+      is_public: [''],
       created_date: ['']
     });
   }

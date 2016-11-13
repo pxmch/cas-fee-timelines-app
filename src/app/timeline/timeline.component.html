@@ -1,4 +1,4 @@
-<div class="mdl-grid" *ngIf="!(timeline | async)?.is_private">
+<div class="mdl-grid" *ngIf="(timeline | async)?.is_public">
   <div class="mdl-cell mdl-cell--12-col mdl-color--white event-box">
     <div *ngIf="showMetadata" class="timeline__metadata">
       Timeline «{{ (timeline | async)?.title }}»<br>
@@ -17,7 +17,7 @@
     </ul>
   </div>
 </div>
-<div class="mdl-grid" *ngIf="(timeline | async)?.is_private">
+<div class="mdl-grid" *ngIf="!(timeline | async)?.is_public">
   <div class="mdl-cell mdl-cell--12-col">
     Die angeforderte Timeline ist nicht (mehr) öffentlich erreichbar.
   </div>

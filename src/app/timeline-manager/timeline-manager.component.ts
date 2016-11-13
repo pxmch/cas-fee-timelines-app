@@ -78,7 +78,7 @@ export class TimelineManagerComponent {
 
     this.timelines.push({
       created_date: timestamp, title: this.timeline_title, description: this.timeline_description,
-      is_private: false
+      is_public: false
     });
 
     this.timeline_title = '';
