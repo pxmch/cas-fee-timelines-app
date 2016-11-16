@@ -1,6 +1,7 @@
 
 <h1>Timeline bearbeiten</h1>
 
+<h2>Basisdaten der Timeline</h2>
 <timeline-form [prefilledData]="timeline" #tlForm></timeline-form>
 
 <button
@@ -13,3 +14,34 @@
 <a [routerLink]="['/timeline-manager']" class="mdl-button mdl-js-button timeline-mask__button">
   Abbrechen
 </a>
+<br><br>
+<h2>Events der Timeline</h2>
+
+<nav class="event-actions">
+  <a href="#" class="mdl-button mdl-js-button mdl-button--raised">
+    + Neues Event
+  </a>
+</nav>
+<table class="event-edit-list mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <thead>
+  <tr>
+    <th class="mdl-data-table__cell--non-numeric">Titel</th>
+    <th class="mdl-data-table__cell--non-numeric">Beschreibung</th>
+    <th>Start</th>
+    <th>Ende</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let evt of eventsForTimeline">
+    <td class="mdl-data-table__cell--non-numeric"><b>{{evt.title}}</b></td>
+    <td class="mdl-data-table__cell--non-numeric">{{evt.description | trunc:50 }}</td>
+    <td>{{evt.start}}</td>
+    <td>{{evt.end}}</td>
+    <td>
+      <a (click)="deleteEventByKey(tlu.$key)"><i class="material-icons">delete</i></a>
+      <a [routerLink]="['/timeline-manager/edit/', evt.$key]"><i class="material-icons">edit</i></a>
+    </td>
+  </tr>
+  </tbody>
+</table>

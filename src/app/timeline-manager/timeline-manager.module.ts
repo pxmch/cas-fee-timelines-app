@@ -7,6 +7,7 @@ import {TimelineFormComponent} from "./forms/timeline-form/timeline-form.compone
 import {ReactiveFormsModule} from "@angular/forms";
 import {TimelineEditComponent} from "./timeline-edit/timeline-edit.component";
 import {TimelineCreateComponent} from "./timeline-create/timeline-create.component";
+import {EventFormComponent} from "./forms/event-form/event-form.component";
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {TimelineCreateComponent} from "./timeline-create/timeline-create.compone
     TimelineManagerRouting,
   ],
   declarations: [
+    EventFormComponent,
     TimelineFormComponent,
     TimelineManagerComponent,
     TimelineEditComponent,

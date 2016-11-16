@@ -11,7 +11,9 @@ import {Timeline} from '../shared/model/timeline'
 ]})  
 
 export class TimelineManagerComponent implements OnInit {  
+
     timelinesForUser: Observable<Timeline[]>;  
+
     constructor(private timelinesService: TimelinesService) {}  
 
     ngOnInit() { 

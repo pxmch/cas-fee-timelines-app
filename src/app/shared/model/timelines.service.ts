@@ -93,4 +93,11 @@ export class TimelinesService {
     return Observable.fromPromise(this.fbRef.update(dataObject));
   }
 
+  deleteEventOfTimeline(key: string, timelineKey: string) : Observable<any> {
+    let dataObject = {};
+    dataObject[`events/${key}`] = null;
+    dataObject[`eventsPerTimeline/$timelineKey/${key}`] = null;
+    return Observable.fromPromise(this.fbRef.update(dataObject));
+  }
+
 }
