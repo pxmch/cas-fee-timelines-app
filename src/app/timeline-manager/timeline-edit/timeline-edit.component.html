@@ -1,27 +1,92 @@
+<!-- PAGE HEADING -->
+<div class="mdl-grid mdl-grid--no-spacing page-heading">
+  <h1 class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    Timeline bearbeiten
+  </h1>
+  <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet  mdl-cell--4-col-phone heading-actions">
+    <a [routerLink]="['/timeline-manager']" class="mdl-button mdl-button--raised mdl-button--colored mdl-js-button timeline-mask__button">
+      Zurück zur Übersicht
+    </a>
+  </div>
+</div>
 
-<h1>Timeline bearbeiten</h1>
+<!-- NOTIFICATION -->
+<div *ngIf="notification.type" class="form-card form-card--notification form-card--notification-{{notification.type}}">
+  <i class="material-icons">{{notification.icon}}</i> <span>{{notification.text}}</span>
+</div>
 
-<h2>Basisdaten der Timeline</h2>
-<timeline-form [prefilledData]="timeline" #tlForm></timeline-form>
 
-<button
-  [disabled]="!tlForm.getIsValid()"
-  (click)="save(tlForm)"
-  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent timeline-mask__button"
->
-  Speichern
-</button>
-<a [routerLink]="['/timeline-manager']" class="mdl-button mdl-js-button timeline-mask__button">
-  Abbrechen
-</a>
-<br><br>
-<h2>Events der Timeline</h2>
+<!-- TIMELINE -->
+<div class="mdl-grid mdl-grid--no-spacing section-heading">
+  <h2 class="mdl-cell mdl-cell--6-col-desktop  mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    Basisdaten
+  </h2>
+  <div class="mdl-cell mdl-cell--6-col-desktop  mdl-cell--4-col-tablet mdl-cell--4-col-phone heading-actions">
+    <button (click)="showTimelineForm()" [disabled]="isTimelineFormVisible" class="mdl-button mdl-js-button mdl-button--raised">
+      Basisdaten bearbeiten
+    </button>
+  </div>
+</div>
 
-<nav class="event-actions">
-  <a href="#" class="mdl-button mdl-js-button mdl-button--raised">
-    + Neues Event
-  </a>
-</nav>
+<!-- TIMELINE DATA -->
+<div class="form-card timeline-data" [class.visually-hidden]="isTimelineFormVisible">
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <h4>Titel der Timeline</h4>
+    <p>{{(timeline| async)?.title}}</p>
+    <h4>Beschreibung der Timeline</h4>
+    <p>{{(timeline| async)?.description}}</p>
+    <h4>Sichtbarkeit</h4>
+    <p>Die Timeline ist <b *ngIf="!(timeline| async)?.is_public">nicht</b> öffentlich sichtbar</p>
+  </div>
+</div>
+
+<!-- TIMELINE FORM -->
+<div class="form-card" [class.visually-hidden]="!isTimelineFormVisible">
+  <timeline-form [prefilledData]="(timeline| async)" #tlForm></timeline-form>
+  <div class="form-card__action-bar">
+    <a (click)="closeTimelineForm()" class="mdl-button mdl-js-button timeline-mask__button">
+      Abbrechen
+    </a>
+    <button
+      [disabled]="!tlForm.getIsValid()"
+      (click)="saveTimeline(tlForm)"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent timeline-mask__button"
+    >
+      Speichern
+    </button>
+  </div>
+</div>
+
+<!-- EVENTS -->
+<div class="mdl-grid mdl-grid--no-spacing section-heading">
+  <h2 class="mdl-cell mdl-cell--6-col-desktop  mdl-cell--4-col-tablet  mdl-cell--4-col-phone">
+    Ereignisse
+  </h2>
+  <div class="mdl-cell mdl-cell--6-col-desktop  mdl-cell--4-col-tablet  mdl-cell--4-col-phone heading-actions">
+    <button (click)="showNewEventForm()" [disabled]="isEventFormVisible" class="mdl-button mdl-js-button mdl-button--raised">
+      + Neues Ereignis
+    </button>
+  </div>
+</div>
+
+<!-- EVENTS FORM -->
+<div *ngIf="isEventFormVisible" class="form-card">
+  <event-form #evtForm></event-form>
+  <div class="form-card__action-bar">
+    <a (click)="closeEventForm()" class="mdl-button mdl-js-button timeline-mask__button">
+      Abbrechen
+    </a>
+    <button
+      [disabled]="!evtForm.getIsValid()"
+      (click)="save(evtForm)"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent timeline-mask__button"
+    >
+      Speichern
+    </button>
+  </div>
+</div>
+
+<!-- EVENTS DATA TABLE -->
 <table class="event-edit-list mdl-data-table mdl-js-data-table mdl-shadow--2dp">
   <thead>
   <tr>

@@ -1,10 +1,10 @@
-<form [formGroup]="timelineForm" autocomplete="off" class="timeline-mask">
-  <fieldset>
-    <div class="mdl-textfield mdl-js-textfield timeline-mask__field">
+<form [formGroup]="timelineForm" autocomplete="off" class="timeline-mask mdl-grid">
+  <fieldset class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label timeline-mask__field">
       <input id="title" name="title" type="text"  formControlName="title" class="mdl-textfield__input">
       <label class="mdl-textfield__label" for="title">Titel der Timeline</label>
     </div>
-    <div class="mdl-textfield mdl-js-textfield timeline-mask__field">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label timeline-mask__field">
       <textarea class="mdl-textfield__input"
                 name="description"
                 type="text"
@@ -19,6 +19,8 @@
       <input type="checkbox" id="is_public" name="is_public" formControlName="is_public" class="mdl-switch__input">
       <span class="mdl-switch__label">Timeline öffentlich sichtbar</span>
     </label>
+  </fieldset>
+  <fieldset class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
     <input id="created_date" type="hidden"  formControlName="created_date">
   </fieldset>
 </form>

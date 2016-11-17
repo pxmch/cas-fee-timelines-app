@@ -1,0 +1,29 @@
+<form [formGroup]="eventForm" autocomplete="off" class="event-mask mdl-grid">
+  <fieldset class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label event-mask__field">
+      <input id="evt-title" name="title" type="text"  formControlName="title" class="mdl-textfield__input">
+      <label class="mdl-textfield__label" for="evt-title">Titel des Events</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label event-mask__field">
+      <textarea class="mdl-textfield__input"
+                name="description"
+                type="text"
+                formControlName="description"
+                type="text"
+                rows= "3"
+                id="evt-description">
+      </textarea>
+      <label class="mdl-textfield__label" for="evt-description">Beschreibung des Events</label>
+    </div>
+  </fieldset>
+  <fieldset class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-textfield mdl-js-textfield event-mask__field">
+      <input id="evt-start_date" name="start_date" type="date"  formControlName="start_date" class="mdl-textfield__input">
+      <label class="mdl-textfield__label" for="evt-start_date">Startdatum</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield event-mask__field">
+      <input id="evt-end_date" name="end_date" type="date"  formControlName="end_date" class="mdl-textfield__input">
+      <label class="mdl-textfield__label" for="evt-end_date">Enddatum</label>
+    </div>
+  </fieldset>
+</form>
