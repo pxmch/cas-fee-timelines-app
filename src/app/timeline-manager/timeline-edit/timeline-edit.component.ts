@@ -53,9 +53,9 @@ export class TimelineEditComponent implements OnInit {
       );
   }
 
-  deleteEventByKey($key: string) {
-    if(confirm('Event wirlich löschen?')){
-      this.timelinesService.deleteEventOfTimeline($key, this.route.snapshot.params['id'])
+  deleteEventByKey(key: string) {
+    if(confirm('Wollen Sie dieses Ereignis wirklich löschen?')){
+      this.timelinesService.deleteEventOfTimeline(key, this.route.snapshot.params['id'])
         .subscribe(
           val => {
             this.showNotification("Event gelöscht", "success");
@@ -100,7 +100,9 @@ export class TimelineEditComponent implements OnInit {
 
     this.notification = {text, type, icon};
 
-    setTimeout(() => this.clearNotification(), 4500);
+    if(type === 'success') {
+      setTimeout(() => this.clearNotification(), 4500);
+    }
   }
 
   clearNotification() {

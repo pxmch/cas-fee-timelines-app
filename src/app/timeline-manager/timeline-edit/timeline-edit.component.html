@@ -105,7 +105,7 @@
     <td><span *ngIf="evt.start_date">{{evt.start_date | date:"dd.MM.yyyy"}}</span></td>
     <td><span *ngIf="evt.end_date">{{evt.end_date | date:"dd.MM.yyyy"}}</span></td>
     <td>
-      <a (click)="deleteEventByKey(tlu.$key)"><i class="material-icons">delete</i></a>
+      <a (click)="deleteEventByKey(evt.$key, timeline.$key)"><i class="material-icons">delete</i></a>
       <a [routerLink]="['/timeline-manager/edit/', evt.$key]"><i class="material-icons">edit</i></a>
     </td>
   </tr>
