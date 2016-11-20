@@ -24,7 +24,7 @@ export class TimelineFormComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if(changes['prefilledData']) {
+    if(changes['prefilledData'] && changes['prefilledData'].currentValue) {
       this.timelineForm.patchValue(changes['prefilledData'].currentValue)
     }
   }

@@ -15,10 +15,16 @@ const TimelineManagerRoutes: Routes = [
   },
   {
     path: 'timeline-manager/edit/:id',
-    component: TimelineEditComponent,
+    component: TimelineEditComponent
+    /*
     resolve: {
       timeline: TimelineResolve
     }
+    */
+  },
+  {
+    path: 'timeline-manager/edit',
+    redirectTo: '/timeline-manager/new'
   },
   {
     path: 'timeline-manager',
