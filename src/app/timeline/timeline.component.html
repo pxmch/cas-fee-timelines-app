@@ -9,7 +9,7 @@
     <ul class="event-list">
       <li *ngFor="let ev of events | async">
         <div class="event-list__item">
-          {{ev.start * 1000 | date:"dd.MM.yyyy"}}<span *ngIf="ev.end"> - {{ev.end * 1000 | date:"dd.MM.yyyy"}}</span><br>
+          <span *ngIf="ev.start_date">{{ev.start_date | date:"dd.MM.yyyy"}}</span><span *ngIf="ev.end"> - {{ev.end_date | date:"dd.MM.yyyy"}}</span><br>
           <b>{{ev.title}}</b><br>
           {{ev.description}}
         </div>

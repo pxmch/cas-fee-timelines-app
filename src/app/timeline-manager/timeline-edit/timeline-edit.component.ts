@@ -38,7 +38,18 @@ export class TimelineEditComponent implements OnInit {
           this.closeTimelineForm();
           this.showNotification("Timeline gespeichert", "success");
         },
-        err => alert(`Bei Speichern ist ein Fehler aufgetreten: ${err}`)
+        err => this.showNotification(`Bei Speichern ist ein Fehler aufgetreten: ${err}`, "error")
+      );
+  }
+
+  createEvent(form) {
+    this.timelinesService.createEventForTimeline(this.timelineKey, form.getFormValue())
+      .subscribe(
+        val => {
+          this.closeEventForm();
+          this.showNotification("Ereignis gespeichert", "success");
+        },
+        err => this.showNotification(`Bei Speichern ist ein Fehler aufgetreten: ${err}`, "error")
       );
   }
 
@@ -47,9 +58,9 @@ export class TimelineEditComponent implements OnInit {
       this.timelinesService.deleteEventOfTimeline($key, this.route.snapshot.params['id'])
         .subscribe(
           val => {
-            alert("Gelöscht!");
+            this.showNotification("Event gelöscht", "success");
           },
-          err => alert(`Bei Löschen ist ein Fehler aufgetreten: ${err}`)
+          err => this.showNotification(`Bei Löschen ist ein Fehler aufgetreten: ${err}`, "error")
         )
     }
   }
@@ -88,6 +99,8 @@ export class TimelineEditComponent implements OnInit {
     }
 
     this.notification = {text, type, icon};
+
+    setTimeout(() => this.clearNotification(), 4500);
   }
 
   clearNotification() {

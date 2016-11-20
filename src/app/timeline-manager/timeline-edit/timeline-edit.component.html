@@ -11,8 +11,9 @@
 </div>
 
 <!-- NOTIFICATION -->
-<div *ngIf="notification.type" class="form-card form-card--notification form-card--notification-{{notification.type}}">
+<div *ngIf="notification.type" (click)="(clearNotification())" class="form-card form-card--notification form-card--notification-{{notification.type}}">
   <i class="material-icons">{{notification.icon}}</i> <span>{{notification.text}}</span>
+  <div  class="form-card__close"><i class="material-icons">close</i></div>
 </div>
 
 
@@ -78,7 +79,7 @@
     </a>
     <button
       [disabled]="!evtForm.getIsValid()"
-      (click)="save(evtForm)"
+      (click)="createEvent(evtForm)"
       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent timeline-mask__button"
     >
       Speichern
@@ -101,8 +102,8 @@
   <tr *ngFor="let evt of eventsForTimeline">
     <td class="mdl-data-table__cell--non-numeric"><b>{{evt.title}}</b></td>
     <td class="mdl-data-table__cell--non-numeric">{{evt.description | trunc:50 }}</td>
-    <td>{{evt.start}}</td>
-    <td>{{evt.end}}</td>
+    <td><span *ngIf="evt.start_date">{{evt.start_date | date:"dd.MM.yyyy"}}</span></td>
+    <td><span *ngIf="evt.end_date">{{evt.end_date | date:"dd.MM.yyyy"}}</span></td>
     <td>
       <a (click)="deleteEventByKey(tlu.$key)"><i class="material-icons">delete</i></a>
       <a [routerLink]="['/timeline-manager/edit/', evt.$key]"><i class="material-icons">edit</i></a>

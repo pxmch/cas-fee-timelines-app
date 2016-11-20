@@ -100,4 +100,29 @@ export class TimelinesService {
     return Observable.fromPromise(this.fbRef.update(dataObject));
   }
 
+  createEventForTimeline(timelineKey: string, event: any) : Observable<any> {
+    const eventData = Object.assign({}, event);
+    const generatedKey = this.fbRef.child('events').push().key;
+
+    let dataObject = {};
+    dataObject["events/" + generatedKey] = eventData;
+    dataObject[`eventsPerTimeline/${timelineKey}/${generatedKey}`] = true;
+
+
+    const subject = new Subject();
+    this.fbRef.update(dataObject)
+      .then(
+        () => {
+          subject.next(generatedKey);   // since the firebase promise resolves with 'undefined', add the generated key
+          subject.complete();
+
+        },
+        err => {
+          subject.error(err);
+          subject.complete();
+        }
+      );
+    return subject.asObservable();
+  }
+
 }

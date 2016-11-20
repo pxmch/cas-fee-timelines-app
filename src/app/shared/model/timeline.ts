@@ -5,18 +5,20 @@ export class Timeline {
     public title: string,
     public description: string,
     public created_date: Date,
-    public is_public: boolean
+    public is_public: boolean,
+    public last_changed: Date
   ){
 
   }
 
-  static fromJson({$key, title, description, created_date, is_public}): Timeline {
+  static fromJson({$key, title, description, created_date, is_public, last_changed}): Timeline {
     return new Timeline(
       $key,
       title,
       description,
       created_date,
-      is_public
+      is_public,
+      last_changed
     );
   }
 

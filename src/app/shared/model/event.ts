@@ -4,19 +4,19 @@ export class Event {
     public $key: string,
     public title: string,
     public description: string,
-    public start: number,
-    public end: number
+    public start_date: number,
+    public end_date: number
   ){
 
   }
 
-  static fromJson({$key, title, description, start, end}): Event {
+  static fromJson({$key, title, description, start_date, end_date}): Event {
     return new Event(
       $key,
       title,
       description,
-      start,
-      end
+      start_date,
+      end_date
     );
   }
 
