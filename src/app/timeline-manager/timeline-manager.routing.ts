@@ -11,11 +11,13 @@ import {TimelineResolve} from "../shared/resolves/timeline.resolve.ts";
 const TimelineManagerRoutes: Routes = [
   {
     path: 'timeline-manager/new',
-    component: TimelineCreateComponent
+    component: TimelineCreateComponent,
+    canActivate: [ LoginGuardService ]
   },
   {
     path: 'timeline-manager/edit/:id',
-    component: TimelineEditComponent
+    component: TimelineEditComponent,
+    canActivate: [ LoginGuardService ]
     /*
     resolve: {
       timeline: TimelineResolve

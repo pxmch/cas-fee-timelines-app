@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {routing, appRoutingProviders} from './app.routing';
-import {AuthMethods, AngularFireModule} from "angularfire2";
+import {AuthMethods, AuthProviders, AngularFireModule} from "angularfire2";
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/concatMap';
@@ -26,7 +26,8 @@ var firebaseConfig = {
 };
 
 var firebaseAuthConfig = {
-  method: AuthMethods.Popup
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
 };
 
 @NgModule({

@@ -22,7 +22,11 @@ export class TimelineManagerComponent implements OnInit {  
 
     deleteTimeline(key: string) {
       if (window.confirm("Wollen Sie diese Timeline mit allen Ereignissen wirklich löschen?\n\nDiese Aktion kann nicht rückgängig gemacht werden.")) {
-        this.timelinesService.deleteTimelineByKey(key, '-KPio2Etua4oo1i73dfx');
+        this.timelinesService.deleteTimelineByKey(key, '-KPio2Etua4oo1i73dfx')
+          .subscribe(
+            () => console.log('Löschen erfolgreich.'),
+            err => console.log('Fehler beim Löschen: '+ err)
+          );
       }
     }
 }

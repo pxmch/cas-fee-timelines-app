@@ -18,7 +18,8 @@ export class EventFormComponent implements OnInit {
       title: ['',Validators.required],
       description: [''],
       start_date: ['', Validators.required],
-      end_date: ['']
+      end_date: [''],
+      date_display_format: ['', Validators.required]
     });
   }
 

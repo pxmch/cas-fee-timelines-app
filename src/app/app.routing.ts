@@ -9,10 +9,6 @@ declare let System: any; //will be transformed by webpack +2.0 to webpack_requir
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'login', loadChildren: () => {
-      return System.import('./auth/auth.routing').then(result => result.AuthModule);
-    }
-  },
   { path: '', component: HomeComponent }
 ];
 

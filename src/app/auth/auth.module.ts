@@ -1,33 +1,34 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AuthRouting} from "./auth.routing";
-import {LoginStatusComponent} from "./login-status/login-status.component";
 import {LoginComponent} from "./login/login.component";
 import {LoginGuardService} from "./services/login-guard.service";
 import {SignupComponent} from "./signup/signup.component";
-import {UserService} from "./services/user.service";
+import {LoginService} from "./services/login.service.ts";
+import { LoginMenuComponent } from './login-menu/login-menu.component';
 
 @NgModule({
   imports: [
-    CommonModule,
     AuthRouting,
-    FormsModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     LoginComponent,
-    LoginStatusComponent,
-    SignupComponent
+    SignupComponent,
+    LoginMenuComponent
   ],
   exports: [
     LoginComponent,
-    LoginStatusComponent,
+    LoginMenuComponent,
     SignupComponent
   ],
   providers: [
     LoginGuardService,
-    UserService
+    LoginService
   ]
 })
 export class AuthModule { }

@@ -25,5 +25,41 @@
       <input id="evt-end_date" name="end_date" type="date"  formControlName="end_date" class="mdl-textfield__input">
       <label class="mdl-textfield__label" for="evt-end_date">Enddatum</label>
     </div>
+    <div>
+      <h4>Anzeigeformat der Daten</h4>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="date_display_format-1">
+        <input type="radio"
+               id="date_display_format-1"
+               class="mdl-radio__button"
+               name="date_display_format"
+               value="dd.mm.yyyy"
+               formControlName="date_display_format"
+               [checked]="eventForm.controls.date_display_format.value === 'dd.mm.yyyy'"
+        >
+        <span class="mdl-radio__label">Tag, Monat und Jahr</span>
+      </label>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="date_display_format-2">
+        <input type="radio"
+               id="date_display_format-2"
+               class="mdl-radio__button"
+               name="date_display_format"
+               value="MM.yyyy"
+               formControlName="date_display_format"
+               [checked]="eventForm.controls.date_display_format.value === 'MM.yyyy'"
+        >
+        <span class="mdl-radio__label">Monat und Jahr</span>
+      </label>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="date_display_format-3">
+        <input type="radio"
+               id="date_display_format-3"
+               class="mdl-radio__button"
+               name="date_display_format"
+               value="yyyy"
+               formControlName="date_display_format"
+               [checked]="eventForm.controls.date_display_format.value === 'yyyy'"
+        >
+        <span class="mdl-radio__label">Nur Jahr</span>
+      </label>
+    </div>
   </fieldset>
 </form>

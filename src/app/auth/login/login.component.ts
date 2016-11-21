@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-
-import {UserService} from "../services/user.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {LoginService} from "../services/login.service.ts";
 
 @Component({
   selector: 'login',
@@ -11,25 +11,28 @@ import {UserService} from "../services/user.service";
 
 export class LoginComponent {
 
-  private userId = '';
-  private passwd = '';
   private message = '';
+  private loginForm: FormGroup;
 
-  constructor(private userService: UserService, private router: Router) {
-    if (this.userService.isLoggedIn()) {
-      this.router.navigate(['/timeline-manager']);
-    }
-  }
-
-  onSubmit() {
-    this.login()
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) {
+    this.loginForm = this.fb.group({
+      userId: ['', Validators.required],
+      passwd: ['', Validators.required]
+    });
   }
 
   login() {
     this.message = '';
-    this.userService.login(this.userId, this.passwd).then(
-      () => { this.message = 'Anmeldung erfolgreich. Sie werden gleich weitergeleitet.'; this.router.navigate(['/timeline-manager'])},
-      () => { this.message = 'Anmeldung fehlgeschlagen. Bitte nochmals probieren.'; }
+    const formVal = this.loginForm.value;
+    this.loginService.login(formVal.userId, formVal.passwd).then(
+      () => {
+        this.message = 'Anmeldung erfolgreich. Sie werden gleich weitergeleitet.';
+        this.router.navigate(['/timeline-manager'])
+      },
+      () => {
+        this.message = 'Anmeldung fehlgeschlagen. Bitte nochmals probieren.';
+      }
     );
+
   }
 }

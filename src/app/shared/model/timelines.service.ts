@@ -6,7 +6,6 @@ import {Event} from "./event";
 import {Subject} from "rxjs/Subject";
 import 'rxjs/add/operator/do';
 
-
 @Injectable()
 export class TimelinesService {
 
@@ -50,7 +49,7 @@ export class TimelinesService {
     return timelinesForUser;
    }
 
-  createNewTimeline(userId: string, timeline: any) : Observable<any> {
+  createTimeline(userId: string, timeline: any) : Observable<any> {
     const ctime = new Date().toISOString();
     const timelineData = Object.assign({}, timeline, {last_changed: ctime, created_date: ctime });
 
@@ -73,34 +72,42 @@ export class TimelinesService {
     return Observable.fromPromise(this.fbRef.update(dataObject));
   }
 
+  updateTimelineLastModifiedTime(key: string) : void {
+    const ctime = new Date().toISOString();
+    const itemObservable = this.db.object(`/timelines/${key}`);
+    itemObservable.update({ last_changed: ctime });
+  }
+
   deleteTimelineByKey (key: string, userId: string) : Observable<any> {
     let dataObject = {};
     dataObject[`timelines/${key}`] = null;
     dataObject[`timelinesPerUser/${userId}/${key}`] = null;
     dataObject[`eventsPerTimeline/${key}`] = null;
 
-    // add all events to the list of removals
-    let eventKeys = this.db.list('eventsPerTimeline/'+key)
-      .map(evk => evk.map( evt => evt.$key ))
-      .subscribe(
-          val => {
-            for(let key of val) {
-              dataObject[`events/${key}`] = null;
-            }
-            return Observable.fromPromise(this.fbRef.update(dataObject));
-          },
-          err => {
-            Observable.throw(new Error(err));
-          }
-      );
+    let dbRef = this.fbRef;
+    const evtQuery = dbRef.child('eventsPerTimeline').child(key);
+    const promise = evtQuery.once('value', function(snapshot) {
+      snapshot.forEach(function(eptSnapshot) {
+        dataObject['events/'+eptSnapshot.key] = null;
+      })
+      //console.log(dataObject);
+      //console.log(dbRef);
+      dbRef.update(dataObject);
+    });
+
+    return Observable.fromPromise(promise);
   }
 
   deleteEventOfTimeline(key: string, timelineKey: string) : Observable<any> {
-    console.log(timelineKey);
     let dataObject = {};
     dataObject[`events/${key}`] = null;
     dataObject[`eventsPerTimeline/${timelineKey}/${key}`] = null;
-    return Observable.fromPromise(this.fbRef.update(dataObject));
+
+    const obs = Observable.fromPromise(this.fbRef.update(dataObject));
+
+    this.updateTimelineLastModifiedTime(timelineKey);
+
+    return obs;
   }
 
   createEventForTimeline(timelineKey: string, event: any) : Observable<any> {
@@ -110,8 +117,11 @@ export class TimelinesService {
     let dataObject = {};
     dataObject["events/" + generatedKey] = eventData;
     dataObject[`eventsPerTimeline/${timelineKey}/${generatedKey}`] = true;
+    const obs = Observable.fromPromise(this.fbRef.update(dataObject));
 
-    return Observable.fromPromise(this.fbRef.update(dataObject));
+    this.updateTimelineLastModifiedTime(timelineKey);
+
+    return obs;
   }
 
   updateFirebaseWithKeyReturned(dataObject, key) : Observable<any> {
