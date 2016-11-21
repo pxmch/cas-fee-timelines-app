@@ -9,7 +9,7 @@
     <ul class="event-list">
       <li *ngFor="let ev of events | async">
         <div class="event-list__item">
-          <span *ngIf="ev.start_date">{{ev.start_date | date: ev.date_display_format}}</span><span *ngIf="ev.end"> - {{ev.end_date | date: ev.date_display_format}}</span><br>
+          <span *ngIf="ev.start_date">{{ev.start_date | date: ev.date_display_format}}</span><span *ngIf="ev.end_date">&ndash;{{ev.end_date | date: ev.date_display_format}}</span><br>
           <b>{{ev.title}}</b><br>
           {{ev.description}}
         </div>
