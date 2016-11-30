@@ -30,7 +30,7 @@
 </div>
 
 <!-- TIMELINE DATA -->
-<div class="form-card timeline-data" [class.visually-hidden]="isTimelineFormVisible">
+<div class="form-card timeline-data mdl-grid" [class.visually-hidden]="isTimelineFormVisible">
   <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
     <h4>Titel der Timeline</h4>
     <p>{{(timeline| async)?.title}}</p>
@@ -38,6 +38,10 @@
     <p>{{(timeline| async)?.description}}</p>
     <h4>Sichtbarkeit</h4>
     <p>Die Timeline ist <b *ngIf="!(timeline| async)?.is_public">nicht</b> öffentlich sichtbar</p>
+  </div>
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <h4>Darstellung der Timeline</h4>
+    <p>{{(timeline| async)?.style_theme}}</p>
   </div>
 </div>
 

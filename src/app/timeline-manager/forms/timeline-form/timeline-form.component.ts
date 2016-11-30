@@ -15,11 +15,16 @@ export class TimelineFormComponent implements OnInit, OnChanges {
   prefilledData: any;
 
   constructor(private fb: FormBuilder) {
+    this.initializeFormControls();
+  }
+
+  initializeFormControls() : void {
     this.timelineForm = this.fb.group({
       title: ['',Validators.required],
       description: ['',Validators.required],
       is_public: [''],
-      created_date: ['']
+      created_date: [''],
+      style_theme: ['', Validators.required]
     });
   }
 
@@ -30,6 +35,10 @@ export class TimelineFormComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
+  }
+
+  resetForm(): void {
+    this.initializeFormControls();
   }
 
   getIsValid() {

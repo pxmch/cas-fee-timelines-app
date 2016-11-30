@@ -95,6 +95,8 @@ export class TimelinesService {
       snapshot.forEach(function(eptSnapshot) {
         dataObject['events/'+eptSnapshot.key] = null;
       })
+      //console.log(dataObject);
+      //console.log(dbRef);
       dbRef.update(dataObject);
     });
 
@@ -115,7 +117,6 @@ export class TimelinesService {
 
   createEventForTimeline(timelineKey: string, event: any) : Observable<any> {
     const eventData = Object.assign({}, event);
-    delete(eventData.$key);
     const generatedKey = this.fbRef.child('events').push().key;
 
     let dataObject = {};

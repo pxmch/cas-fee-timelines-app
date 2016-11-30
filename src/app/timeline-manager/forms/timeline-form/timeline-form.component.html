@@ -16,11 +16,42 @@
       <label class="mdl-textfield__label" for="description">Beschreibung der Timeline</label>
     </div>
     <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect timeline-mask__field" for="is_public">
-      <input type="checkbox" id="is_public" name="is_public" formControlName="is_public" class="mdl-switch__input">
+      <input type="checkbox"
+             id="is_public"
+             name="is_public"
+             formControlName="is_public"
+             class="mdl-switch__input"
+             [checked]="timelineForm.controls.is_public.value === true"
+      >
       <span class="mdl-switch__label">Timeline öffentlich sichtbar</span>
     </label>
   </fieldset>
   <fieldset class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <div>
+      <h4>Darstellung der Timeline</h4>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect timeline-mask__field" for="style_1">
+        <input type="radio"
+               id="style_1"
+               class="mdl-radio__button"
+               name="style_theme"
+               value="Vertikal, einfach"
+               formControlName="style_theme"
+               [checked]="timelineForm.controls.style_theme.value === 'Vertikal, einfach'"
+        >
+        <span class="mdl-radio__label">Vertikal, einfach</span>
+      </label>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect timeline-mask" for="style_2">
+        <input type="radio"
+               id="style_2"
+               class="mdl-radio__button"
+               name="style_theme"
+               value="Horizontal, einfach"
+               formControlName="style_theme"
+               [checked]="timelineForm.controls.style_theme.value === 'Horizontal, einfach'"
+        >
+        <span class="mdl-radio__label">Horizontal, einfach</span>
+      </label>
+    </div>
     <input id="created_date" type="hidden"  formControlName="created_date">
   </fieldset>
 </form>

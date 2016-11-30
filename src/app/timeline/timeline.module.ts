@@ -6,8 +6,9 @@ import {TimelineListComponent} from "./timeline-list/timeline-list.component";
 import {TimelineTeaserComponent} from "./timeline-teaser/timeline-teaser.component";
 import {TimelineDetailComponent} from "./timeline-detail/timeline-detail.component";
 import {TimelineOverviewComponent} from "./timeline-overview/timeline-overview.component";
+import {TimelineStyleVerticalBasicComponent} from './styles/timeline-style-vertical-basic/timeline-style-vertical-basic.component';
+import {TimelineStyleHorizontalBasicComponent} from './styles/timeline-style-horizontal-basic/timeline-style-horizontal-basic.component';
 import {SharedModule} from "../shared/shared.module";
-
 
 @NgModule({
   imports: [
@@ -20,7 +21,9 @@ import {SharedModule} from "../shared/shared.module";
     TimelineDetailComponent,
     TimelineListComponent,
     TimelineOverviewComponent,
-    TimelineTeaserComponent
+    TimelineTeaserComponent,
+    TimelineStyleVerticalBasicComponent,
+    TimelineStyleHorizontalBasicComponent
   ],
   exports: [
     TimelineComponent,
