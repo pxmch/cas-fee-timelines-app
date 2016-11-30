@@ -1,15 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild, ViewChildren} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Timeline} from "../../shared/model/timeline";
 import {Event} from '../../shared/model/event'
 import {TimelinesService} from "../../shared/model/timelines.service";
 import {Observable} from "rxjs/Observable";
+import {EventFormComponent} from "../forms/event-form/event-form.component";
 
 @Component({
   selector: 'timeline-edit',
   templateUrl: './timeline-edit.component.html',
   styleUrls: ['./timeline-edit.component.scss']
 })
+
 export class TimelineEditComponent implements OnInit {
 
   private timeline: Observable<Timeline>;
@@ -17,7 +19,13 @@ export class TimelineEditComponent implements OnInit {
   private eventsForTimeline: Observable<Event[]>;
   private isEventFormVisible = false;
   private isTimelineFormVisible = false;
+  private isEventEditMode = false;
   private notification = {};
+
+  eventPrefill: any;
+
+  @ViewChild('evtForm')
+  private eventForm: EventFormComponent;
 
   constructor(private timelinesService: TimelinesService, private route: ActivatedRoute) {
   }
@@ -53,6 +61,17 @@ export class TimelineEditComponent implements OnInit {
       );
   }
 
+  saveEvent(form) {
+    this.timelinesService.updateEvent(form.getFormValue())
+      .subscribe(
+        val => {
+          this.closeEventForm();
+          this.showNotification("Ereignis gespeichert", "success");
+        },
+        err => this.showNotification(`Bei Speichern ist ein Fehler aufgetreten: ${err}`, "error")
+      );
+  }
+
   deleteEventByKey(key: string) {
     if(confirm('Wollen Sie dieses Ereignis wirklich löschen?')){
       this.timelinesService.deleteEventOfTimeline(key, this.route.snapshot.params['id'])
@@ -65,11 +84,34 @@ export class TimelineEditComponent implements OnInit {
     }
   }
 
+  startEventEdit (key: string) {
+    this.timelinesService.getEventByKey(key).subscribe(
+      val => {
+        this.isEventEditMode = true;
+        this.isEventFormVisible = true;
+        this.eventPrefill = val;
+      },
+      err => this.showNotification(`Bei Laden des Ereignisses ist ein Fehler aufgetreten: ${err}`, "error")
+    );
+  }
+
   showNewEventForm() {
+    this.eventForm.resetForm();
+    this.isEventEditMode = false;
     this.isEventFormVisible = true;
+
+
+    /** TODO SET FOCUS ***
+    console.log(this.eventForm);
+    console.log(this.eventForm.eventForm.controls.title);
+    console.log(this.eventForm.eventForm.controls['title']);
+
+    this.eventForm.eventForm.controls.title.nativeElement.focus();
+     ****/
   }
 
   closeEventForm() {
+    this.isEventEditMode = false;
     this.isEventFormVisible = false;
   }
 

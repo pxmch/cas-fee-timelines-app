@@ -20,6 +20,11 @@ export class TimelinesService {
       .map(result => Timeline.fromJson(result));
   }
 
+  getEventByKey(key: string): Observable<Event> {
+    return this.db.object('/events/'+key)
+      .map(result => Event.fromJson(result));
+  }
+
   getEventsForTimeline(key: string): Observable<Event[]> {
     let eventKeys = this.db.list('eventsPerTimeline/'+key)
 
@@ -90,8 +95,6 @@ export class TimelinesService {
       snapshot.forEach(function(eptSnapshot) {
         dataObject['events/'+eptSnapshot.key] = null;
       })
-      //console.log(dataObject);
-      //console.log(dbRef);
       dbRef.update(dataObject);
     });
 
@@ -112,6 +115,7 @@ export class TimelinesService {
 
   createEventForTimeline(timelineKey: string, event: any) : Observable<any> {
     const eventData = Object.assign({}, event);
+    delete(eventData.$key);
     const generatedKey = this.fbRef.child('events').push().key;
 
     let dataObject = {};
@@ -122,6 +126,17 @@ export class TimelinesService {
     this.updateTimelineLastModifiedTime(timelineKey);
 
     return obs;
+  }
+
+  updateEvent(event: any) : Observable<any> {
+    const ctime = new Date().toISOString();
+    const evtKey = event.$key;
+    const eventData = Object.assign({}, event, {last_changed: ctime});
+    delete(eventData.$key);
+
+    let dataObject = {};
+    dataObject["events/" + evtKey] = eventData;
+    return Observable.fromPromise(this.fbRef.update(dataObject));
   }
 
   updateFirebaseWithKeyReturned(dataObject, key) : Observable<any> {

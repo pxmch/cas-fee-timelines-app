@@ -71,15 +71,22 @@
 </div>
 
 <!-- EVENTS FORM -->
-<div *ngIf="isEventFormVisible" class="form-card">
-  <event-form #evtForm></event-form>
+<div [class.visually-hidden]="!isEventFormVisible" class="form-card">
+  <event-form #evtForm [prefilledData]="eventPrefill"></event-form>
   <div class="form-card__action-bar">
     <a (click)="closeEventForm()" class="mdl-button mdl-js-button timeline-mask__button">
       Abbrechen
     </a>
-    <button
+    <button *ngIf="!isEventEditMode"
       [disabled]="!evtForm.getIsValid()"
       (click)="createEvent(evtForm)"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent timeline-mask__button"
+    >
+      Speichern
+    </button>
+    <button *ngIf="isEventEditMode"
+      [disabled]="!evtForm.getIsValid()"
+      (click)="saveEvent(evtForm)"
       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent timeline-mask__button"
     >
       Speichern
@@ -106,7 +113,7 @@
     <td><span *ngIf="evt.end_date">{{evt.end_date | date:"dd.MM.yyyy"}}</span></td>
     <td>
       <a (click)="deleteEventByKey(evt.$key, timeline.$key)"><i class="material-icons">delete</i></a>
-      <a [routerLink]="['/timeline-manager/edit/', evt.$key]"><i class="material-icons">edit</i></a>
+      <a (click)="startEventEdit(evt.$key)"><i class="material-icons">edit</i></a>
     </td>
   </tr>
   </tbody>

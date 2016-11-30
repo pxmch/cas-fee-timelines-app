@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -14,16 +14,31 @@ export class EventFormComponent implements OnInit {
   prefilledData: any;
 
   constructor(private fb: FormBuilder) {
+    this.initializeFormControls();
+  }
+
+  ngOnInit() {
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['prefilledData'] && changes['prefilledData'].currentValue) {
+      this.eventForm.patchValue(changes['prefilledData'].currentValue)
+    }
+  }
+
+  initializeFormControls() : void {
     this.eventForm = this.fb.group({
       title: ['',Validators.required],
       description: [''],
       start_date: ['', Validators.required],
       end_date: [''],
-      date_display_format: ['', Validators.required]
+      date_display_format: ['', Validators.required],
+      $key: ['']
     });
   }
 
-  ngOnInit() {
+  resetForm(): void {
+    this.initializeFormControls();
   }
 
   getIsValid() {
