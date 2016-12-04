@@ -1,4 +1,4 @@
-# NewTimelines
+# Timelines App
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli).
 
@@ -6,7 +6,6 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
-
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 ## Running unit tests
@@ -18,11 +17,11 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
 Before running the tests make sure you are serving the app via `ng serve`.
 
-## Deploying to Firebase
+## Deployment to production (Firebase)
 
-Prerequisite: The firebase cli must be installed.
-First run `ng build --prod` and then `firebase deploy` to deploy to firebase.
+Prerequisites: The firebase cli must be installed and you must be logged in to firebase.
 
-## Further help
+1. Run `ng build --prod`
+2. When successfully built, run `firebase deploy` to deploy the app to firebase.
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Firebase cli will show the production url in its output.
