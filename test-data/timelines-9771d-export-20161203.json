@@ -107,7 +107,7 @@
       "title" : "Der Turing-Test"
     },
     "-KXHwRP4nbedyq2-3PRG" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Beschreibung 3b",
       "end_date" : "2016-11-07",
       "last_changed" : "2016-11-23T21:36:25.222Z",
@@ -115,7 +115,7 @@
       "title" : "Event 3b"
     },
     "-KXqykzQq6ED7Bxtw7Rb" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Sowas gibt's nur einmal",
       "end_date" : "",
       "last_changed" : "2016-11-30T20:44:49.262Z",
@@ -151,7 +151,7 @@
       "title" : "Erweiterung des Bahneinschnittes Oerlikon."
     },
     "-KY5YFEtlYSSXXOIolQu" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
       "start_date" : "2014-06-15",
@@ -165,7 +165,7 @@
       "title" : "Erstellen von Letzigraben- und Kohlendreieckbrücke."
     },
     "-KY5YlJoa4-vRzkwY63W" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
       "start_date" : "2015-12-13",
@@ -180,7 +180,7 @@
       "title" : "Im Herbst Abschluss des Bahnhofausbaus in Oerlikon."
     },
     "-KY5aJjBHHaHafz5xi7X" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Wahlkampf-Slogan: \"Make America great again\"",
       "end_date" : "",
       "last_changed" : "2016-12-03T21:32:51.127Z",
@@ -195,21 +195,21 @@
       "title" : "An der Spitze des republikanischen Bewerberfeldes"
     },
     "-KY5btowHUR93_Mbf__g" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Bei der ersten Fernsehdebatte zwischen den führenden zehn republikanischen Bewerbern füllt Trump den größten Teil der Redezeit. Außer ihm debattieren Jeb Bush, Ben Carson, Chris Christie, Ted Cruz, Mike Huckabee, John Kasich, Rand Paul, Marco Rubio und Scott Walker.",
       "end_date" : "",
       "start_date" : "2015-08-06",
       "title" : "Erste Fernsehdebatte"
     },
     "-KY5cNgwOaEOtv9dHb-T" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump unterzeichnet auf Drängen der Parteiführung im Beisein des Vorsitzenden des republikanischen Nationalkomitees Reince Priebus eine Loyalitätsbekundung (loyalty pledge), dass er auf eine Kandidatur als Unabhängiger verzichten und den republikanischen Bewerber unterstützen würde. ",
       "end_date" : "",
       "start_date" : "2015-09-03",
       "title" : "loyalty pledge"
     },
     "-KY5ciZjMAMP1kObwC5L" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Nachlassen der Umfragewerte",
       "end_date" : "",
       "start_date" : "2015-09-15",
@@ -245,14 +245,14 @@
       "title" : "Caucus in Iowa"
     },
     "-KY5flNmQIGVdhx6tKaU" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump kann sich klar durchsetzen und übertrifft dabei die letzten Umfragewerte.",
       "end_date" : "",
       "start_date" : "2016-02-09",
       "title" : "Erste Primary in New Hampshire"
     },
     "-KY5gI0TStQC0kyDk4mI" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump siegt deutlich vor seinen nächsten beiden Herausforderern Cruz und Rubio. Unterdessen steigt Jeb Bush nach einem für ihn enttäuschenden Ergebnis aus dem Rennen aus.",
       "end_date" : "",
       "last_changed" : "2016-12-03T21:58:56.300Z",
@@ -260,63 +260,63 @@
       "title" : "Vorwahl in South Carolina"
     },
     "-KY5gZYdIg_ViG6iKwJw" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump geht mit 46 Prozent der Stimmen als klarer Sieger hervor.",
       "end_date" : "",
       "start_date" : "2016-02-23",
       "title" : "Caucus in Nevada"
     },
     "-KY5hBB1YZBsdosNSg3p" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump baut seinen Vorsprung aus und gewinnt in sieben Staaten – Alabama, Arkansas, Georgia, Massachusetts, Tennessee, Vermont und Virginia.",
       "end_date" : "",
       "start_date" : "2016-03-01",
       "title" : "Super Tuesday"
     },
     "-KY5i0lgIbBaR2ek7Ihh" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Während Trump in Maine und Kansas den zweiten Platz nach Ted Cruz belegt, siegt er in Louisiana und Kentucky. Wenige Tage später setzt sich Trump auch in Michigan, Louisiana und Hawaii klar durch. ",
       "end_date" : "",
       "start_date" : "2016-03-05",
       "title" : "Super Saturday"
     },
     "-KY5iUzYqNrzmey1MuK-" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump gewinnt in fünf von sechs Vorwahlen, darunter in Florida, ",
       "end_date" : "",
       "start_date" : "2016-03-15",
       "title" : "Zweiter Super Tuesday"
     },
     "-KY5inojZl-IEI9i1ubt" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump verliert überraschend gegen Ted Cruz.",
       "end_date" : "",
       "start_date" : "2016-04-05",
       "title" : "Vorwahl in Wisconsin"
     },
     "-KY5izGnq-MNifGi5mKc" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump gewinnt.",
       "end_date" : "",
       "start_date" : "2016-04-19",
       "title" : "Vorwahl in New York"
     },
     "-KY5jC4US0U31qeJvaQ4" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump gewinnt deutlich.",
       "end_date" : "",
       "start_date" : "2016-05-03",
       "title" : "Primary in Indiana"
     },
     "-KY5jZD9sCc80d8hWMEb" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Trump erreicht formell mit 1239 Delegierten die notwendige Delegiertenzahl, die ihm eine Nominierung für die Präsidentschaftskandidatur durch die Republikanische Partei auf deren Parteikongress in Cleveland im Juli 2016 sichern soll.",
       "end_date" : "",
       "start_date" : "2016-05-26",
       "title" : "Erreichen notwendiger Delegiertenzahl"
     },
     "-KY5kBsFgwnZD5uoBrT4" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Im Vorfeld wählt Trump den Gouverneur von Indiana, Mike Pence, als Kandidaten für das Amt des Vizepräsidenten („Running Mate“) aus.",
       "end_date" : "2016-07-21",
       "start_date" : "2016-07-18",
@@ -330,14 +330,14 @@
       "title" : "Leitende Wahlkampfmanagerin"
     },
     "-KY5lMMD2uidZp4ekhxn" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Die Washington Post veröffentlicht ein Video aus dem Jahre 2005, in dem Trump sich in obszöner Weise über Frauen äußerte. Dies löst heftige Proteste aus. ",
       "end_date" : "",
       "start_date" : "2016-10-08",
       "title" : "Sexismus-Vorwürfe"
     },
     "-KY5lbZiI9mi8ycd51y6" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Den Grundstein für seinen Sieg legt Trump im sogenannten Rust Belt des Mittleren Westens, wo er in traditionell demokratischen Staaten wie Michigan, Wisconsin und Pennsylvania eine Mehrheit erreichen kann. Zusätzlich gewinnt er die Abstimmungen in den klassischen Swing States wie Florida, Ohio und Iowa. ",
       "end_date" : "",
       "last_changed" : "2016-12-03T22:21:55.782Z",
@@ -345,7 +345,7 @@
       "title" : "Wahlsieg von Trump"
     },
     "-KY5m12gY94nhd2l6QKZ" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
       "start_date" : "2017-01-20",
@@ -366,42 +366,42 @@
       "title" : "Einreichung Initiative"
     },
     "-KY5o4mujiaAAOWmFOvX" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Die Initiative wird von 50,3 Prozent der Stimmenden und mit einem Ständemehr von 12 5⁄2 : 8 1⁄2 angenommen.\n\nWährend die mehrheitlich deutschsprachigen Kantone ausser Basel-Stadt, Zürich und Zug die Initiative annehmen, lehnen die Westschweizer Kantone sie ab. Die höchste Zustimmung erhält die Initiative im Tessin. Die Stimmbeteiligung ist mit 56,6 Prozent überdurchschnittlich hoch.",
       "end_date" : "",
       "start_date" : "2014-02-09",
       "title" : "Annahme der Initiative"
     },
     "-KY5oSmzLpTYFjswI8Ze" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Der Bundesrat legt erste Schritte für die Umsetzung der neuen Verfassungsbestimmungen fest.",
       "end_date" : "",
       "start_date" : "2014-02-12",
       "title" : "Erste Schritte zur Umsetzung"
     },
     "-KY5oeao21YoqQA53v_e" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
       "start_date" : "2014-02-14",
       "title" : "Von-Wattenwyl-Gespräche"
     },
     "-KY5ovmZ3h_pCzfIpi77" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Bundesrätin Simonetta Sommaruga informiert in Brüssel den Rat der Justiz- und Innenminister der Europäischen Union (EU) über die Umsetzung der neuen schweizerischen Verfassungsbestimmungen zur Zuwanderung ",
       "end_date" : "",
       "start_date" : "2014-03-03",
       "title" : "Information in Brüssel"
     },
     "-KY5pDnLPaY57WmZc-Mg" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Arbeitstreffen mit Bundesrätin Simonetta Sommaruga, Bundesrat Johann N. Schneider-Ammann und Spitzenvertretern der Sozialpartner, der Kantone sowie des Städte- und Gemeindeverbandes ",
       "end_date" : "",
       "start_date" : "2014-03-13",
       "title" : "Arbeitstreffen"
     },
     "-KY5pVLpMiAOMiM7uPLT" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
       "last_changed" : "2016-12-03T22:38:15.031Z",
@@ -409,28 +409,28 @@
       "title" : "Von-Wattenwyl-Gespräche"
     },
     "-KY5pl3Aixi13BteyYDU" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Bundesrat präsentiert das Konzept zur Umsetzung des Zuwanderungsartikels ",
       "end_date" : "",
       "start_date" : "2014-06-20",
       "title" : "Präsentation Umsetzungskonzept"
     },
     "-KY5pzF3VEDUKzzCoHKJ" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Die Schweiz reicht das angekündigte Revisionsbegehren zum FZA ein. ",
       "end_date" : "",
       "start_date" : "2014-07-07",
       "title" : "Revisionsbegehren FZA"
     },
     "-KY5qEuE7xMqPQRa2Ra1" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
       "start_date" : "2014-07-25",
       "title" : "Antwort der EU auf das Revisionsbegehren FZA"
     },
     "-KY5qUIhFaKTnB-hhc-Q" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Bundesrat will mit der EU über Personenfreizügigkeit verhandeln ",
       "end_date" : "",
       "last_changed" : "2016-12-03T22:43:09.006Z",
@@ -438,28 +438,28 @@
       "title" : "Verhandlung über FZA gewünscht"
     },
     "-KY5qetMZapg_6FxfpHZ" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Bundespräsidentin Sommaruga trifft EU-Kommissionspräsidenten, -Ratspräsidenten und -Parlamentspräsidenten in Brüssel ",
       "end_date" : "",
       "start_date" : "2015-02-02",
       "title" : "Treffen in Brüssel"
     },
     "-KY5qx4RI3YrEbn-WC5b" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
       "start_date" : "2015-02-11",
       "title" : "Verabschiedung Gesetzesentwurf und Verhandlungsmandat"
     },
     "-KY5r7GGaPjShLuirpar" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Bundesrat entscheidet sich für Schutzklausel ",
       "end_date" : "",
       "start_date" : "2015-12-04",
       "title" : "Schutzklausel"
     },
     "-KY5rK7UySS2rVwIhv4A" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "Bundesrat legt Gesetzesentwurf zur Steuerung der Zuwanderung vor ",
       "end_date" : "",
       "start_date" : "2016-03-04",
