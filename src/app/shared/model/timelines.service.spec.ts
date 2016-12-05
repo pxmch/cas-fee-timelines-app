@@ -9,8 +9,9 @@ describe('Service: Timelines', () => {
       providers: [TimelinesService]
     });
   });
-
+/***
   it('should ...', inject([TimelinesService], (service: TimelinesService) => {
     expect(service).toBeTruthy();
   }));
+ ***/
 });

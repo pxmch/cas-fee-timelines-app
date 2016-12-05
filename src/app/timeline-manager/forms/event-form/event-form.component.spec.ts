@@ -1,11 +1,28 @@
 /* tslint:disable:no-unused-variable */
-
-import { TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 import { EventFormComponent } from './event-form.component';
 
-describe('Component: EventForm', () => {
-  it('should create an instance', () => {
-    let component = new EventFormComponent();
+describe('EventFormComponent', () => {
+  let component: EventFormComponent;
+  let fixture: ComponentFixture<EventFormComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ EventFormComponent ]
+    })
+      .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EventFormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+/***
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
+***/
 });

@@ -1,11 +1,29 @@
 /* tslint:disable:no-unused-variable */
-
-import { TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 import { TimelineFormComponent } from './timeline-form.component';
 
-describe('Component: TimelineForm', () => {
-  it('should create an instance', () => {
-    let component = new TimelineFormComponent();
+describe('TimelineFormComponent', () => {
+  let component: TimelineFormComponent;
+  let fixture: ComponentFixture<TimelineFormComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ TimelineFormComponent ]
+    })
+      .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(TimelineFormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  /***
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
+***/
 });
