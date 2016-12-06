@@ -1,9 +1,27 @@
-<ul class="event-list">
-  <li *ngFor="let ev of events | async">
-    <div class="event-list__item">
-      <span *ngIf="ev.start_date">{{ev.start_date | date: ev.date_display_format}}</span><span *ngIf="ev.end_date">&ndash;{{ev.end_date | date: ev.date_display_format}}</span><br>
-      <b>{{ev.title}}</b><br>
-      {{ev.description}}
-    </div>
-  </li>
-</ul>
+<div class="timeline-horizontal__wrapper">
+  <ul class="event-list">
+    <li *ngFor="let ev of events | async">
+      <div class="event-item"
+           [ngStyle]="{
+              'left': calcEventPosition(ev.start_date),
+              'width': calcEventDuration(ev.start_date,ev.end_date)
+           }"
+      >
+        <div class="event-item__data">
+          <div class="event-item__dates">
+            <span *ngIf="ev.start_date">{{ev.start_date | date: ev.date_display_format}}</span><span *ngIf="ev.end_date">&ndash;{{ev.end_date | date: ev.date_display_format}}</span>
+          </div>
+          <span class="event-item__title">{{ev.title}}</span>
+          <span class="event-item__description">{{ev.description}}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="timeline-scale">
+    <div class="timeline-scale__legend"></div>
+    <div class="timeline-scale__start-date">{{start | date: 'yyyy'}}</div>
+    <div class="timeline-scale__end-date">{{end | date: 'yyyy'}}</div>
+  </div>
+</div>
+

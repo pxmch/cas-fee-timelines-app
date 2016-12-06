@@ -16,6 +16,8 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
   private end: string;
   private duration: number;
 
+  private markerMinSize = 10;
+
   constructor() { }
 
   ngOnInit() {
@@ -54,6 +56,23 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
     this.duration = new Date(this.end).getTime() - new Date(this.start).getTime();
   }
 
+  calcEventPosition(event_start){
+    let eventStart = new Date(event_start).getTime();
+    let eventStartDiff = eventStart - new Date(this.start).getTime()
 
+    let position = (eventStartDiff * 100 / this.duration);
+    return  ''+ position +'%';
+    //return 'calc(' + position + '% - ' + (this.markerMinSize/2) + 'px)';
+  }
+
+  calcEventDuration(event_start, event_end){
+    let eventStart = new Date(event_start).getTime();
+    let eventEnd = new Date(event_end).getTime();
+    let eventDiff = eventEnd - eventStart;
+    let width =  eventDiff * 100 / this.duration;
+
+    width = (width < this.markerMinSize) ? this.markerMinSize : width;
+    return ''+ width +'%';
+  }
 
 }
