@@ -62,7 +62,10 @@
 
 .main-content {
   margin: 8px 16px;
-  min-height: 70vh;
+
+  @include tablet-up {
+    min-height: calc(100vh - 212px);
+  }
 
   @include tablet {
     margin: 16px 32px 32px;

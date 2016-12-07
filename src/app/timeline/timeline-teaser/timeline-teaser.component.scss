@@ -2,7 +2,11 @@
 @import "../../../styles/_mixins.scss";
 
 .timeline-teaser {
+  display: block;
   text-decoration: none;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  padding: 16px;
 
   &:hover,
   &:focus {
@@ -13,49 +17,34 @@
   &:active {
     opacity: 0.5;
   }
+}
 
-  &.mdl-card {
-    width: calc(100vw - 32px);
-    height: calc(50vw - 32px);
-    min-height: 150px;
+.card__actions {
+  position: absolute;
+  bottom: 12px;
+  border-color: rgba(255, 255, 255, 0.2);
+}
 
-    @include tablet {
-      width: calc( (97vw - 64px) / 3);
-      height: calc( (97vw - 64px) / 3);
-      min-width: 220px;
-      min-height: 220px;
-    }
+.card__title {
+  align-items: flex-start;
+}
 
-    @include desktop {
-      width: calc( (97vw - 120px) / 4);
-      height: calc( (97vw - 120px) / 4);
-    }
-  }
+.card__title > h2 {
+  margin-top: 0;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  @include hyphenate;
+}
 
-  .mdl-card__actions {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
+.card__title,
+.card__actions,
+.card__actions > .mdl-button {
+  color: #fff;
+}
 
-  .mdl-card__title {
-    align-items: flex-start;
-  }
-
-  .mdl-card__title > h2 {
-    margin-top: 0;
-    font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
-    @include hyphenate;
-  }
-
-  .mdl-card__title,
-  .mdl-card__actions,
-  .mdl-card__actions > .mdl-button {
-    color: #fff;
-  }
-
-  .material-icons {
-    vertical-align: text-bottom;
-  }
+.material-icons {
+  vertical-align: text-bottom;
 }
 
 .color-0 {

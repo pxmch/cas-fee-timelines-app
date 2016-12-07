@@ -4,3 +4,20 @@
 }
 
 
+.timeline__title {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.timeline__description {
+  width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &:hover {
+    overflow: visible;
+    white-space: normal;
+  }
+}

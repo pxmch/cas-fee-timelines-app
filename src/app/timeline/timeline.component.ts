@@ -13,6 +13,7 @@ import {Timeline} from "../shared/model/timeline";
 export class TimelineComponent implements OnInit {
 
   @Input('showMetadata') showMetadata = true;
+  @Input('timelineId') timelineId = '';
 
   timeline: Observable<Timeline>;
   events : Observable<Event[]>;
@@ -20,7 +21,7 @@ export class TimelineComponent implements OnInit {
   constructor(private timelinesService: TimelinesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.params['id'];
+    const id = (this.timelineId != '') ? this.timelineId : this.route.snapshot.params['id'];
     this.timeline = this.timelinesService.getTimelineByKey(id);
     this.events = this.timelinesService.getEventsForTimeline(id);
   }

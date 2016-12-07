@@ -1,9 +1,9 @@
 <div class="mdl-grid" *ngIf="(timeline | async)?.is_public">
   <div class="mdl-cell mdl-cell--12-col mdl-color--white event-box">
     <div *ngIf="showMetadata" class="timeline__metadata">
-      Timeline «{{ (timeline | async)?.title }}»<br>
-      {{ (timeline | async)?.description }} <br>
-      Publiziert am {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }} von xyz
+      <div class="timeline__title">Timeline «{{ (timeline | async)?.title }}»</div>
+      <div class="timeline__description">{{ (timeline | async)?.description }}</div>
+      <div class="timeline__publication">Publiziert am {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }} von xyz</div>
     </div>
     <timeline-style-vertical-basic [events]="events" *ngIf="(timeline | async)?.style_theme ==='Vertikal, einfach'"></timeline-style-vertical-basic>
     <timeline-style-horizontal-basic [events]="events" [timeline]="timeline" *ngIf="(timeline | async)?.style_theme ==='Horizontal, einfach'"></timeline-style-horizontal-basic>

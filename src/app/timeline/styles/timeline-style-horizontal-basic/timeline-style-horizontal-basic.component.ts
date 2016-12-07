@@ -58,11 +58,10 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
 
   calcEventPosition(event_start){
     let eventStart = new Date(event_start).getTime();
-    let eventStartDiff = eventStart - new Date(this.start).getTime()
+    let eventStartDiff = eventStart - new Date(this.start).getTime();
 
     let position = (eventStartDiff * 100 / this.duration);
     return  ''+ position +'%';
-    //return 'calc(' + position + '% - ' + (this.markerMinSize/2) + 'px)';
   }
 
   calcEventDuration(event_start, event_end){
