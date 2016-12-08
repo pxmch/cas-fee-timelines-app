@@ -1,7 +1,7 @@
 <div class="timeline-horizontal__wrapper">
   <ul class="event-list">
     <li *ngFor="let ev of events | async">
-      <div class="event-item"
+      <div class="event-item" [class.event-item--right]="isEventPositionRight(ev.start_date,ev.end_date)"
            id="{{ev.$key}}"
            [ngStyle]="{
               'left': calcEventPosition(ev.start_date),
@@ -14,7 +14,7 @@
           </div>
           <span class="event-item__title">{{ev.title}}</span>
         </div>
-        <div class="mdl-tooltip mdl-tooltip--large event-item_tooltip" attr.data-mdl-for="{{ev.$key}}">
+        <div class="event-item_tooltip">
           <span *ngIf="ev.start_date">{{ev.start_date | date: ev.date_display_format}}</span><span *ngIf="ev.end_date">&ndash;{{ev.end_date | date: ev.date_display_format}}</span>
           <h4>{{ev.title}}</h4>
           <p>{{ev.description}}</p>

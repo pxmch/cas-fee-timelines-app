@@ -16,7 +16,7 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
   private end: string;
   private duration: number;
 
-  private markerMinSize = 10;
+  private markerMinSize = 15;
 
   constructor() { }
 
@@ -28,15 +28,9 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
 
   setupTimeline(events) {
     this.getTimelineDuration(events);
-    this.getLeftPosition('1950-01-01');
   }
 
-  getLeftPosition(date: string){
-    return null;
-  }
-
-
-  getTimelineDuration(events) {
+  getTimelineDuration(events): void {
     let firstStartDate = events[0].start_date;
     let lastStartDate = events[0].start_date;
     let firstEndDate = events[0].start_date;
@@ -56,22 +50,32 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
     this.duration = new Date(this.end).getTime() - new Date(this.start).getTime();
   }
 
-  calcEventPosition(event_start){
+  calcEventPosition(event_start, numberonly = false): any {
     let eventStart = new Date(event_start).getTime();
     let eventStartDiff = eventStart - new Date(this.start).getTime();
 
     let position = (eventStartDiff * 100 / this.duration);
-    return  ''+ position +'%';
+
+    return numberonly ? position : ''+ position +'%';
   }
 
-  calcEventDuration(event_start, event_end){
+  calcEventDuration(event_start, event_end): string {
+    if(!event_end){
+      return ''+this.markerMinSize+'px';
+    };
     let eventStart = new Date(event_start).getTime();
     let eventEnd = new Date(event_end).getTime();
     let eventDiff = eventEnd - eventStart;
     let width =  eventDiff * 100 / this.duration;
 
-    width = (width < this.markerMinSize) ? this.markerMinSize : width;
-    return ''+ width +'%';
+    let minWidth = this.markerMinSize * 100 / this.duration;
+
+    width = (width < minWidth) ? minWidth : width;
+    return '' + width + '%';
+  }
+
+  isEventPositionRight(event_start): boolean {
+    return this.calcEventPosition(event_start, true) > 75 ? true : false;
   }
 
 }

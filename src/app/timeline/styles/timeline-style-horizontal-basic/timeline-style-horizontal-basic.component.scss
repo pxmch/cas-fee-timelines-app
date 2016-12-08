@@ -43,33 +43,42 @@
 .event-item {
   display: block;
   position: relative;
-  width: 10px;
+  min-width: 15px;
   min-height: 10px;
   padding: 0 2px 0 4px;
   margin-bottom: 21px;
-  border-radius: 3px;
-  border: 1px solid #666;
-  background-color: #e7e7e7;
+  background-color: #9C27B0;
   line-height: 1;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  transition: min-width 300ms;
+
+  &:hover {
+    min-width: 200px;
+  }
+
+  &.event-item--right:hover {
+    min-width: 100px;
+  }
+
 }
 
 .event-item__data {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #FFF;
 }
 
 .event-item__dates {
   position: absolute;
   top: 24px;
   left: 0;
-  //left: -34px;
-  //width: 80px;
-  //text-align: center;
   font-size: 12px;
+  color: #000;
 }
 
 .event-item__title {
+  font-weight: 600;
   font-size: 13px;
   line-height: 20px;
 }
@@ -79,17 +88,33 @@
 }
 
 .event-item_tooltip {
-  min-width: 200px;
+  display: none;
+  position: absolute;
+  left: 0;
+  min-width: 0;
+  z-index: 100;
+  overflow: auto;
   text-align: left;
   font-size: 14px;
-  background-color: rgba(255,255,255,0.95);
   color: #333;
   border: 1px solid #e7e7e7;
-  box-shadow: 2px 2px 10px 0 rgba(0,0,0,0.75);
+  background-color: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+
+  .event-item:hover & {
+    display: block;
+    min-width: 200px;
+    padding: 6px;
+  }
+
+  .event-item--right:hover & {
+    left: -100px;
+    width: 200px;
+  }
 
   h4 {
-    margin: 5px 0;
-    font-size: 16px;
+    margin: 4px 0;
+    font-size: 14px;
     line-height: 20px;
     font-weight: 600;
   }

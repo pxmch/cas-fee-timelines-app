@@ -6,12 +6,14 @@
 
 .timeline__title {
   display: block;
+  margin-bottom: 4px;
   font-size: 18px;
   font-weight: 600;
 }
 
 .timeline__description {
   width: 80%;
+  margin-bottom: 4px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -19,5 +21,10 @@
   &:hover {
     overflow: visible;
     white-space: normal;
+
   }
+}
+
+.timeline__publication {
+    font-size: 12px;
 }

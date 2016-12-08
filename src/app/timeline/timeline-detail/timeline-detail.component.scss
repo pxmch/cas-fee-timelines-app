@@ -1,3 +1,10 @@
+@import '../../../styles/mixins';
+
+
+.timeline__description {
+  @include hyphenate;
+}
+
 
 .event-box {
   position: relative;
