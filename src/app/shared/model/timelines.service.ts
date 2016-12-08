@@ -117,6 +117,7 @@ export class TimelinesService {
 
   createEventForTimeline(timelineKey: string, event: any) : Observable<any> {
     const eventData = Object.assign({}, event);
+    delete(eventData.$key);
     const generatedKey = this.fbRef.child('events').push().key;
 
     let dataObject = {};
