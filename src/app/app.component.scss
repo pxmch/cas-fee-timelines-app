@@ -77,6 +77,17 @@
   }
 }
 
+.main-content--embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  background-color: #FFF;
+  max-width: 100%;
+}
+
 .main-footer {
   background-color: #222;
   font-size: 14px;
