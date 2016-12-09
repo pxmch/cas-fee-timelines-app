@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+declare let componentHandler: any;
 
 @Component({
   selector: 'event-form',
-  templateUrl: './event-form.component.html',
-  styleUrls: ['./event-form.component.scss']
+  templateUrl: './event-form.component.html'
 })
 export class EventFormComponent implements OnInit, OnChanges {
 
@@ -47,6 +47,15 @@ export class EventFormComponent implements OnInit, OnChanges {
 
   getFormValue() {
     return this.eventForm.value;
+  }
+
+  ngAfterViewChecked() {
+    /* update of material design lite elements, when dynamically created
+     @see https://denisvuyka.github.io/2016/06/06/angular2-material.html
+     */
+    if (componentHandler) {
+      componentHandler.upgradeAllRegistered();
+    }
   }
 
 }

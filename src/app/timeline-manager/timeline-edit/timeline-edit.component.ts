@@ -5,6 +5,7 @@ import {Event} from '../../shared/model/event'
 import {TimelinesService} from "../../shared/model/timelines.service";
 import {Observable} from "rxjs/Observable";
 import {EventFormComponent} from "../forms/event-form/event-form.component";
+declare let componentHandler: any;
 
 @Component({
   selector: 'timeline-edit',
@@ -150,5 +151,5 @@ export class TimelineEditComponent implements OnInit {
   clearNotification() {
     this.notification = {};
   }
-
+  
 }

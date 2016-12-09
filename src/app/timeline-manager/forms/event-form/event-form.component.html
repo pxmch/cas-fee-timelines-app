@@ -1,65 +1,63 @@
 <form [formGroup]="eventForm" autocomplete="off" class="event-mask mdl-grid">
-  <fieldset class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label event-mask__field">
-      <input id="evt-title" name="title" type="text"  formControlName="title" class="mdl-textfield__input">
-      <label class="mdl-textfield__label" for="evt-title">Titel des Events</label>
+  <fieldset class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone form__fieldset">
+    <div class="form__field">
+      <label for="evt-title">Titel des Events</label>
+      <input id="evt-title" name="title" type="text"  formControlName="title">
     </div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label event-mask__field">
-      <textarea class="mdl-textfield__input"
-                name="description"
+    <div class="form__field">
+      <label for="evt-description">Beschreibung des Events (optional)</label>
+      <textarea name="description"
                 type="text"
                 formControlName="description"
                 type="text"
-                rows= "3"
+                rows= "5"
                 id="evt-description">
       </textarea>
-      <label class="mdl-textfield__label" for="evt-description">Beschreibung des Events</label>
     </div>
   </fieldset>
-  <fieldset class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-    <div class="mdl-textfield mdl-js-textfield event-mask__field">
-      <input id="evt-start_date" name="start_date" type="date"  formControlName="start_date" class="mdl-textfield__input">
-      <label class="mdl-textfield__label" for="evt-start_date">Startdatum</label>
+  <fieldset class="mdl-cell mdl-cell--5-col mdl-cell--1-offset-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone form_fieldset">
+    <div class="form__field form__field--date">
+      <label for="evt-start_date">Startdatum</label>
+      <input id="evt-start_date" name="start_date" type="date" formControlName="start_date">
     </div>
-    <div class="mdl-textfield mdl-js-textfield event-mask__field">
-      <input id="evt-end_date" name="end_date" type="date"  formControlName="end_date" class="mdl-textfield__input">
-      <label class="mdl-textfield__label" for="evt-end_date">Enddatum</label>
+    <div class="form__field form__field--date">
+      <label for="evt-end_date">Enddatum (optional)</label>
+      <input id="evt-end_date" name="end_date" type="date" formControlName="end_date">
     </div>
     <div>
-      <h4>Anzeigeformat der Daten</h4>
-      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect event-mask__field" for="date_display_format-1">
-        <input type="radio"
-               id="date_display_format-1"
-               class="mdl-radio__button"
-               name="date_display_format"
-               value="dd.MM.yyyy"
-               formControlName="date_display_format"
-               [checked]="eventForm.controls.date_display_format.value === 'dd.MM.yyyy'"
-        >
-        <span class="mdl-radio__label">Tag, Monat und Jahr</span>
-      </label>
-      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect event-mask__field" for="date_display_format-2">
-        <input type="radio"
-               id="date_display_format-2"
-               class="mdl-radio__button"
-               name="date_display_format"
-               value="MM.yyyy"
-               formControlName="date_display_format"
-               [checked]="eventForm.controls.date_display_format.value === 'MM.yyyy'"
-        >
-        <span class="mdl-radio__label">Monat und Jahr</span>
-      </label>
-      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect event-mask__field" for="date_display_format-3">
-        <input type="radio"
-               id="date_display_format-3"
-               class="mdl-radio__button"
-               name="date_display_format"
-               value="yyyy"
-               formControlName="date_display_format"
-               [checked]="eventForm.controls.date_display_format.value === 'yyyy'"
-        >
-        <span class="mdl-radio__label">Nur Jahr</span>
-      </label>
+      <div class="form__field form__field--radio-group">
+        <h4>Anzeigeformat der Daten</h4>
+        <label for="date_display_format-1">
+          <input type="radio"
+                 id="date_display_format-1"
+                 name="date_display_format"
+                 value="dd.MM.yyyy"
+                 formControlName="date_display_format"
+                 [checked]="eventForm.controls.date_display_format.value === 'dd.MM.yyyy'"
+          >
+          <span>Tag, Monat und Jahr</span>
+        </label>
+        <label for="date_display_format-2">
+          <input type="radio"
+                 id="date_display_format-2"
+                 name="date_display_format"
+                 value="MM.yyyy"
+                 formControlName="date_display_format"
+                 [checked]="eventForm.controls.date_display_format.value === 'MM.yyyy'"
+          >
+          <span class="">Monat und Jahr</span>
+        </label>
+        <label class="" for="date_display_format-3">
+          <input type="radio"
+                 id="date_display_format-3"
+                 name="date_display_format"
+                 value="yyyy"
+                 formControlName="date_display_format"
+                 [checked]="eventForm.controls.date_display_format.value === 'yyyy'"
+          >
+          <span class="">Nur Jahr</span>
+        </label>
+      </div>
     </div>
     <input id="key" type="hidden" formControlName="$key">
   </fieldset>

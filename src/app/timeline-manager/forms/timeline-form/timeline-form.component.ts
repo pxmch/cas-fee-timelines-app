@@ -3,8 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'timeline-form',
-  templateUrl: './timeline-form.component.html',
-  styleUrls: ['./timeline-form.component.scss']
+  templateUrl: './timeline-form.component.html'
 })
 
 export class TimelineFormComponent implements OnInit, OnChanges {

@@ -62,3 +62,70 @@
     cursor: pointer;
   }
 }
+
+.form_fieldset {
+  margin: 0 0 32px 0;
+}
+
+.form__field {
+  display: block;
+  margin: 0 0 24px 0;
+
+  h4,
+  label {
+    display: block;
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    color: #3756A8;
+  }
+
+  input,
+  textarea {
+    display: block;
+    width: 95%;
+    margin: 0 0 13px 0;
+    padding: 4px 0;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    font-size: 18px;
+    line-height: 20px;
+    font-family: "Helvetica","Arial",sans-serif;
+    text-align: left;
+    color: #333;
+
+    &:focus {
+      margin: 0 0 12px 0;
+      outline: none;
+      border-bottom: 2px solid #3756A8;
+    }
+  }
+}
+
+.form__field--date {
+  input {
+    width: 150px;
+  }
+}
+
+.form__field--radio-group {
+  input {
+    width: auto;
+    margin: 0 6px 6px 0;
+    display: inline-block;
+
+    &:focus {
+      margin: 0 6px 6px 0;
+    }
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  label {
+    text-transform: none;
+    color: #000;
+  }
+
+
+}

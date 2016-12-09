@@ -36,12 +36,12 @@
     <p>{{(timeline| async)?.title}}</p>
     <h4>Beschreibung der Timeline</h4>
     <p>{{(timeline| async)?.description}}</p>
-    <h4>Sichtbarkeit</h4>
-    <p>Die Timeline ist <b *ngIf="!(timeline| async)?.is_public">nicht</b> öffentlich sichtbar</p>
   </div>
   <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
     <h4>Darstellung der Timeline</h4>
     <p>{{(timeline| async)?.style_theme}}</p>
+    <h4>Sichtbarkeit</h4>
+    <p>Die Timeline ist <b *ngIf="!(timeline| async)?.is_public">nicht</b> öffentlich sichtbar</p>
   </div>
 </div>
 
