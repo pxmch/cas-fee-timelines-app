@@ -1,8 +1,11 @@
 @import "../styles/_media-queries.scss";
 
 .main-header {
+  position: relative;
   background-color: #E7E7E7;
   color: #222;
+  z-index: 100;
+  width: 100%;
 }
 
 .main-header__wrapper.main-header__wrapper {
@@ -63,17 +66,15 @@
 .main-content {
   margin: 8px 16px;
 
-  @include tablet-up {
-    min-height: calc(100vh - 212px);
-  }
-
   @include tablet {
     margin: 16px 32px 32px;
+    min-height: calc(100vh - 212px);
   }
 
   @include desktop {
     margin: 16px auto 32px;
     max-width: 1024px;
+    min-height: calc(100vh - 180px);
   }
 }
 
@@ -89,6 +90,8 @@
 }
 
 .main-footer {
+  position: relative;
+  z-index: 100;
   background-color: #222;
   font-size: 14px;
   color: #ccc;
