@@ -7,11 +7,12 @@
   position: absolute;
   top: 0; bottom: 0; left: 0; right: 0;
   padding: 16px;
+  opacity: 1;
+  transition: opacity 300ms ease-out;
 
   &:hover,
   &:focus {
     opacity: 0.75;
-    transition: opacity 300ms ease;
   }
 
   &:active {

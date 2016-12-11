@@ -2,10 +2,12 @@
 
 .main-header {
   position: relative;
-  background-color: #E7E7E7;
-  color: #222;
   z-index: 100;
   width: 100%;
+  min-width: 320px;
+  color: #E7E7E7;
+  background-color: #333;
+  box-shadow: inset 0px -4px 4px 0px rgba(0,0,0,0.5);
 }
 
 .main-header__wrapper.main-header__wrapper {
@@ -18,6 +20,7 @@
 
   @include desktop {
     margin: 0 auto;
+    padding: 4px 24px 4px 32px;
     max-width: 1024px;
   }
 }
@@ -29,7 +32,7 @@
 
   a {
     margin: 0 8px;
-    color: #222;
+    color: #E7E7E7;
     text-decoration: none;
 
     &:hover,
@@ -65,6 +68,7 @@
 
 .main-content {
   margin: 8px 16px;
+  min-width: 320px;
 
   @include tablet {
     margin: 16px 32px 32px;
@@ -73,6 +77,7 @@
 
   @include desktop {
     margin: 16px auto 32px;
+    padding: 0 32px;
     max-width: 1024px;
     min-height: calc(100vh - 180px);
   }
@@ -92,12 +97,14 @@
 .main-footer {
   position: relative;
   z-index: 100;
-  background-color: #222;
+  min-width: 320px;
+  background-color: #333;
   font-size: 14px;
-  color: #ccc;
+  color: #E7E7E7;
+  box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.5);
 
   a {
-    color: #ccc;
+    color: #E7E7E7;
     text-decoration: none;
 
     &:hover {

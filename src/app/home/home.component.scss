@@ -1,8 +1,11 @@
+@import '../../styles/media-queries';
+
 .content-header {
-  position: relative;
+  position: absolute;
+  top: 0;
   left: 50%;
   right: 50%;
-  margin-top: -16px;
+  bottom: 0;
   margin-left: -50vw;
   margin-right: -50vw;
   font-weight: 300;
@@ -18,14 +21,45 @@
   background-attachment: fixed;
 }
 
+.content-header__intro {
+  position: relative;
+  margin-top: 17vh;
+  padding: 16px;
+  z-index: 10;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 2px 1px 2px #000;
+
+  h1 {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 42px;
+    line-height: 48px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+  p {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  @include tablet-up {
+    padding: 16px 36px;
+  }
+}
+
 .content-wrapper {
   padding-top: 50vh;
   z-index: 1;
 
   h2 {
+    display: inline-block;
     position: relative;
     z-index: 10;
     color: #FFF;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: 2px 1px 2px #000;
   }
 }

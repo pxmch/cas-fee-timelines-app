@@ -1,7 +1,7 @@
 <h1>
   Timeline «{{ (timeline | async)?.title }}»
 </h1>
-<div class="mdl-grid" *ngIf="(timeline | async)?.is_public">
+<div class="mdl-grid timeline-detail__wrapper" *ngIf="(timeline | async)?.is_public">
   <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--bottom timeline__description">
     {{ (timeline | async)?.description }}
   </div>
