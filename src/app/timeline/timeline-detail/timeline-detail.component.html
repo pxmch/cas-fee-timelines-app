@@ -3,7 +3,24 @@
 </h1>
 <div class="mdl-grid timeline-detail__wrapper" *ngIf="(timeline | async)?.is_public">
   <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--bottom timeline__description">
-    {{ (timeline | async)?.description }}
+    <span [innerHTML]="(timeline | async)?.description | trunc:500 | linky:{
+        urls : {
+          schemeMatches : true,
+          wwwMatches    : true,
+          tldMatches    : false
+        },
+        email       : false,
+        phone       : false,
+        mention     : false,
+        hashtag     : false,
+        stripPrefix : false,
+        newWindow   : true,
+        truncate : {
+          length   : 20,
+          location : 'end'
+        },
+        className : ''
+      }"></span>
   </div>
   <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-typography--text-right mdl-cell--bottom">
     Publiziert am {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }}<br>von Username

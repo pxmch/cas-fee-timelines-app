@@ -8,11 +8,13 @@ import {TimelineDetailComponent} from "./timeline-detail/timeline-detail.compone
 import {TimelineOverviewComponent} from "./timeline-overview/timeline-overview.component";
 import {TimelineStyleVerticalBasicComponent} from './styles/timeline-style-vertical-basic/timeline-style-vertical-basic.component';
 import {TimelineStyleHorizontalBasicComponent} from './styles/timeline-style-horizontal-basic/timeline-style-horizontal-basic.component';
+import {LinkyModule} from 'angular2-linky';
 import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   imports: [
     CommonModule,
+    LinkyModule,
     SharedModule,
     TimelineRouting
   ],
