@@ -3,13 +3,20 @@ import {Routes, RouterModule} from '@angular/router';
 import {TimelineComponent} from "./timeline.component";
 import {TimelineDetailComponent} from "./timeline-detail/timeline-detail.component";
 import {TimelineOverviewComponent} from "./timeline-overview/timeline-overview.component";
+import {TimelineResolve} from "../shared/resolves/timeline.resolve";
 
 const TimelineRoutes: Routes = [
   {
-    path: 'timeline/embed/:id', component: TimelineComponent
+    path: 'timeline/embed/:id', component: TimelineComponent,
+    resolve: {
+      timeline: TimelineResolve
+    }
   },
   {
-    path: 'timeline/:id', component: TimelineDetailComponent
+    path: 'timeline/:id', component: TimelineDetailComponent,
+    resolve: {
+     timeline: TimelineResolve
+    }
   },
   {
     path: 'timeline', component: TimelineOverviewComponent
