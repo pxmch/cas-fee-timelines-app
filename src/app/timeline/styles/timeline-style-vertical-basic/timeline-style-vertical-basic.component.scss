@@ -8,7 +8,11 @@
 }
 
 li {
-  width: 50%;
+  width: 100%;
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   &:nth-child(odd) {
     padding: 0 50% 0 0;
@@ -48,6 +52,6 @@ li {
   position: relative;
   display: inline-block;
   padding: 12px 16px;
-  margin: 24px;
+  margin: 0 24px;
   border: 1px solid red;
 }
