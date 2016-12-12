@@ -16,7 +16,7 @@ export class TimelineTeaserComponent implements OnInit {
   constructor () { }
 
   ngOnInit (){
-    this.colorClass = "color-"+(this.id.charCodeAt(11) % 10);
+    this.colorClass = "color-"+((this.id.charCodeAt(11)+this.id.charCodeAt(15)) % 10);
   }
 
 }

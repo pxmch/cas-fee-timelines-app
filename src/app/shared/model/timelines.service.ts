@@ -26,11 +26,14 @@ export class TimelinesService {
   }
 
   getEventsForTimeline(key: string): Observable<Event[]> {
-    let eventKeys = this.db.list('eventsPerTimeline/'+key)
+    let eventKeys = this.db.list('eventsPerTimeline/'+key);
 
     let timelineEvents = eventKeys
       .map(ept => ept.map( event => this.db.object('/events/'+ event.$key)))
-      .switchMap(fbObjObs => Observable.combineLatest(fbObjObs));
+      .flatMap(fbObjObs => Observable.combineLatest(fbObjObs))
+      .map(items => items.sort(
+        (a, b) => new Date(a.start_date).getTime() > new Date(b.start_date).getTime()
+      ))
 
     return timelineEvents;
   }
@@ -95,8 +98,6 @@ export class TimelinesService {
       snapshot.forEach(function(eptSnapshot) {
         dataObject['events/'+eptSnapshot.key] = null;
       })
-      //console.log(dataObject);
-      //console.log(dbRef);
       dbRef.update(dataObject);
     });
 
