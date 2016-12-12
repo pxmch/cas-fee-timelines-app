@@ -12,4 +12,8 @@ export class LoginStatus {
     return this.userId != null ? true : false
   }
 
+  getUserId() : string {
+    return this.userId;
+  }
+
 }

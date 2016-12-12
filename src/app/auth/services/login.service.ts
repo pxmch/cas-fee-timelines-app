@@ -25,6 +25,10 @@ export class LoginService {
     this.router.navigate([''])
   }
 
+  getUserId() {
+    return this.loginStatus.value.getUserId();
+  }
+
   private changeState(user:any = null) {
     if (user) {
       this.loginStatus.next(new LoginStatus(user.uid));

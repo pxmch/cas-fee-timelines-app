@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TimelinesService} from "../../shared/model/timelines.service";
 import {Router} from "@angular/router";
+import {LoginService} from "../../auth/services/login.service";
 
 
 @Component({
@@ -10,13 +11,13 @@ import {Router} from "@angular/router";
 })
 export class TimelineCreateComponent implements OnInit {
 
-  constructor(private timelinesService: TimelinesService, private router: Router) { }
+  constructor(private timelinesService: TimelinesService, private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
   }
 
   save(form) {
-    this.timelinesService.createTimeline('-KPio2Etua4oo1i73dfx', form.getFormValue())
+    this.timelinesService.createTimeline(this.loginService.getUserId(), form.getFormValue())
       .subscribe(
         val => {
           this.router.navigateByUrl('/timeline-manager/edit/'+val);
