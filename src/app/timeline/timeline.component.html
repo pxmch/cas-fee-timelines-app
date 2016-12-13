@@ -22,7 +22,7 @@
             className : ''
           }"></span>
       </div>
-      <div class="timeline__publication">Publiziert am {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }} von xyz</div>
+      <div class="timeline__publication">Publiziert am {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }} von Mrs. Tester</div>
     </div>
     <timeline-style-vertical-basic [events]="events" *ngIf="(timeline | async)?.style_theme ==='Vertikal, einfach'"></timeline-style-vertical-basic>
     <timeline-style-horizontal-basic [events]="events" [timeline]="timeline" *ngIf="(timeline | async)?.style_theme ==='Horizontal, einfach'"></timeline-style-horizontal-basic>
