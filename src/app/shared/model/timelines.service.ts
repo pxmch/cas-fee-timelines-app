@@ -5,6 +5,7 @@ import {Timeline} from "./timeline";
 import {Event} from "./event";
 import {Subject} from "rxjs/Subject";
 import 'rxjs/add/operator/do';
+import {FirebaseListObservable} from "angularfire2/index";
 
 @Injectable()
 export class TimelinesService {
@@ -30,11 +31,9 @@ export class TimelinesService {
 
     let timelineEvents = eventKeys
       .map(ept => ept.map( event => this.db.object('/events/'+ event.$key)))
-      .flatMap(fbObjObs => Observable.combineLatest(fbObjObs))
-      .map(items => items.sort(
-        (a, b) => new Date(a.start_date).getTime() > new Date(b.start_date).getTime()
-      ))
-
+      .concatMap(fbObjObs => Observable.combineLatest(fbObjObs))
+      .map(items => items.sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())) as FirebaseListObservable<any[]>;
+    
     return timelineEvents;
   }
 
