@@ -14,7 +14,7 @@
       ".read": "true",
       "$timeline": {
         ".read": "true",
-        ".write": "auth != null && !data.exists() || root.child('timelinesPerUser').child(auth.uid).child($timeline).exists()",
+        ".write": "auth != null && !data.exists() || root.child('timelinesPerUser').child(auth.uid).child($timeline).exists()"
       },
       ".indexOn": ["created_date"]
     },
