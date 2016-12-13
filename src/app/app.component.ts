@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import { OnInit, OnDestroy, AfterViewChecked } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, RoutesRecognized } from '@angular/router';
 
 declare let componentHandler: any;
 
@@ -16,13 +16,12 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewChecked  {
   private sub: any;
   private isEmbedView: boolean = false;
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     /* check for embed view */
     this.sub = this.router.events.subscribe(e => {
-      if (e instanceof NavigationEnd) {
+      if (e instanceof RoutesRecognized) {
         this.isEmbedView = e.url.indexOf('/embed/') < 0 ? false : true;
       }
     });

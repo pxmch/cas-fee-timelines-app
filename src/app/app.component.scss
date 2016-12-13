@@ -84,7 +84,7 @@
 }
 
 .main-content--embed {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -92,6 +92,7 @@
   margin: 0;
   background-color: #FFF;
   max-width: 100%;
+  overflow: auto;
 }
 
 .main-footer {

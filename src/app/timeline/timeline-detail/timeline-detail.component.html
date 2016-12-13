@@ -29,7 +29,7 @@
     <timeline [showMetadata]=false></timeline>
   </div>
   <div class="mdl-cell mdl-cell--12-col">
-    Embedlink: <a [routerLink]="['/timeline/embed/'+(timeline | async)?.$key]" target="_blank">/view/embed/{{ (timeline | async)?.$key }}</a>
+    Embedlink: <a [routerLink]="['/timeline/embed/'+(timeline | async)?.$key]" target="_blank">/timeline/embed/{{ (timeline | async)?.$key }}</a>
   </div>
 </div>
 <div class="mdl-grid" *ngIf="!(timeline | async)?.is_public">
