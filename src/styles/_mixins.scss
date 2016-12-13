@@ -6,3 +6,14 @@
   -moz-hyphens: auto;
   hyphens: auto;
 }
+
+@mixin message-fade-in {
+  animation: fadein 300ms;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+
+  @keyframes fadein {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}

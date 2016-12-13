@@ -65,3 +65,8 @@ li {
   border: 1px solid red;
 }
 
+.timeline-detail__message-private {
+  opacity: 0;
+  @include message-fade-in;
+}
+

@@ -1,3 +1,4 @@
+@import "../../../styles/mixins";
 
 .page-heading {
   margin: 24px 0 36px;
@@ -53,12 +54,6 @@
   font-size: 16px;
   color: #999;
   opacity: 0;
-  animation: fadein 300ms;
-  animation-delay: 3s;
-  animation-fill-mode: forwards;
+  @include message-fade-in;
 }
 
-@keyframes fadein {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}

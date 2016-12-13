@@ -1,3 +1,4 @@
+@import '../../styles/mixins';
 
 .event-box {
   position: relative;
@@ -18,4 +19,9 @@
 
 .timeline__publication {
     font-size: 12px;
+}
+
+.timeline__message-private {
+  opacity: 0;
+  @include message-fade-in;
 }
