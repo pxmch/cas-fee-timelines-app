@@ -1,9 +1,34 @@
 {
   "rules": {
-    ".read": "true",
-    ".write": "true",
+    "events": {
+      ".read": "true",
+      ".write": "auth != null"
+    },
+    "eventsPerTimeline" : {
+      "$ept" : {
+        ".read": "true",
+        ".write": "root.child('timelinesPerUser').child(auth.uid).child($ept).exists()"
+      }
+    },
     "timelines": {
+      ".read": "true",
+      "$timeline": {
+        ".read": "true",
+        ".write": "auth != null && !data.exists() || root.child('timelinesPerUser').child(auth.uid).child($timeline).exists()",
+      },
       ".indexOn": ["created_date"]
+    },
+    "timelinesPerUser" : {
+      "$tpu" : {
+        ".read": "true",
+        ".write": "$tpu == auth.uid"
+      }
+    },
+    "users": {
+      "$user" : {
+        ".read": "false",
+        ".write": "$user == auth.uid"
+      }
     }
   }
 }
