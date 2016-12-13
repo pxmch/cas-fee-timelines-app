@@ -99,26 +99,31 @@
 </div>
 
 <!-- EVENTS DATA TABLE -->
-<table class="event-edit-list mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-  <thead>
-  <tr>
-    <th class="mdl-data-table__cell--non-numeric">Titel</th>
-    <th class="mdl-data-table__cell--non-numeric">Beschreibung</th>
-    <th>Start</th>
-    <th>Ende</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let evt of eventsForTimeline">
-    <td class="mdl-data-table__cell--non-numeric"><b>{{evt.title}}</b></td>
-    <td class="mdl-data-table__cell--non-numeric">{{evt.description | trunc:50 }}</td>
-    <td><span *ngIf="evt.start_date">{{evt.start_date | date:"dd.MM.yyyy"}}</span></td>
-    <td><span *ngIf="evt.end_date">{{evt.end_date | date:"dd.MM.yyyy"}}</span></td>
-    <td>
-      <a (click)="deleteEventByKey(evt.$key, timeline.$key)"><i class="material-icons">delete</i></a>
-      <a (click)="startEventEdit(evt.$key)"><i class="material-icons">edit</i></a>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<div class="event-edit-list__wrapper">
+  <table class="event-edit-list mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+    <tr>
+      <th width="25%" class="mdl-data-table__cell--non-numeric">Titel</th>
+      <th width="40%" class="mdl-data-table__cell--non-numeric">Beschreibung</th>
+      <th>Start</th>
+      <th>Ende</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let evt of eventsForTimeline">
+      <td class="mdl-data-table__cell--non-numeric"><b>{{evt.title}}</b></td>
+      <td class="mdl-data-table__cell--non-numeric">{{evt.description | trunc:50 }}</td>
+      <td><span *ngIf="evt.start_date">{{evt.start_date | date:evt.date_display_format}}</span></td>
+      <td><span *ngIf="evt.end_date">{{evt.end_date | date:evt.date_display_format}}</span></td>
+      <td>
+        <a (click)="deleteEventByKey(evt.$key, timeline.$key)" title="Ereignis löschen"><i class="material-icons">delete</i></a>
+        <a (click)="startEventEdit(evt.$key)" title="Ereignis bearbeiten"><i class="material-icons">edit</i></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="event-edit-list__blank-slate-info">
+    Tipp: Erfassen Sie neue Ereignisse über den Button 'Neues Ereignis' oben rechts.
+  </div>
+</div>

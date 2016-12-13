@@ -100,6 +100,15 @@ export class TimelineEditComponent implements OnInit {
     this.eventForm.resetForm();
     this.isEventEditMode = false;
     this.isEventFormVisible = true;
+
+
+    /** TODO SET FOCUS ***
+    console.log(this.eventForm);
+    console.log(this.eventForm.eventForm.controls.title);
+    console.log(this.eventForm.eventForm.controls['title']);
+
+    this.eventForm.eventForm.controls.title.nativeElement.focus();
+     ****/
   }
 
   closeEventForm() {

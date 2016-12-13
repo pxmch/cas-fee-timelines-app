@@ -1,34 +1,46 @@
 <h1>Timeline-Manager</h1>
 
+<!-- NOTIFICATION -->
+<div *ngIf="notification.type" (click)="(clearNotification())" class="form-card form-card--notification form-card--notification-{{notification.type}}">
+  <i class="material-icons">{{notification.icon}}</i> <span>{{notification.text}}</span>
+  <div  class="form-card__close"><i class="material-icons">close</i></div>
+</div>
+
 <nav class="page-actions">
   <a [routerLink]="['/timeline-manager/new']" class="mdl-button mdl-js-button mdl-button--raised">
     + Neue Timeline
   </a>
 </nav>
-
-<table class="timeline-edit-list mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-  <thead>
-  <tr>
-    <th></th>
-    <th class="mdl-data-table__cell--non-numeric">Titel</th>
-    <th class="mdl-data-table__cell--non-numeric">Beschreibung</th>
-    <th>Letzte Änderung</th>
-    <th class="mdl-data-table__cell--non-numeric"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let tlu of timelinesForUser | async" >
-    <td>
-      <span *ngIf="!tlu.is_public"><i class="material-icons timeline-item__visibility-indicator">visibility_off</i></span>
-      <span *ngIf="tlu.is_public"><i class="material-icons timeline-item__visibility-indicator">visibility</i></span>
-    </td>
-    <td class="mdl-data-table__cell--non-numeric"><b>{{tlu.title}}</b></td>
-    <td class="mdl-data-table__cell--non-numeric">{{tlu.description | trunc:50 }}</td>
-    <td>{{tlu.last_changed | date:"dd.MM.yyyy"}}</td>
-    <td>
-      <a (click)="deleteTimeline(tlu.$key)"><i class="material-icons">delete</i></a>
-      <a [routerLink]="['/timeline-manager/edit/', tlu.$key]"><i class="material-icons">edit</i></a>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<div class="timeline-edit-list-wrapper">
+  <table class="timeline-edit-list mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="position: relative; z-index: 2;">
+    <thead>
+    <tr>
+      <th width="5%"></th>
+      <th width="25%" class="mdl-data-table__cell--non-numeric">Titel</th>
+      <th width="40%" class="mdl-data-table__cell--non-numeric">Beschreibung</th>
+      <th>Letzte Änderung</th>
+      <th class="mdl-data-table__cell--non-numeric"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tlu of timelinesForUser | async" >
+      <td>
+        <span *ngIf="!tlu.is_public"><i class="material-icons timeline-item__visibility-indicator">visibility_off</i></span>
+        <span *ngIf="tlu.is_public"><i class="material-icons timeline-item__visibility-indicator">visibility</i></span>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric"><b>{{tlu.title}}</b></td>
+      <td class="mdl-data-table__cell--non-numeric">{{tlu.description | trunc:50 }}</td>
+      <td>{{tlu.last_changed | date:"dd.MM.yy"}}</td>
+      <td>
+        <a [routerLink]="['/timeline/', tlu.$key]" target="_blank" title="Öffentlicher Link zur Timeline"><i class="material-icons">link</i></a>
+        <a (click)="deleteTimeline(tlu.$key)" title="Timeline löschen"><i class="material-icons">delete</i></a>
+        <a [routerLink]="['/timeline-manager/edit/', tlu.$key]" title="Timeline bearbeiten"><i class="material-icons">edit</i></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="mdl-progress mdl-js-progress mdl-progress__indeterminate fakeprogress" [class.fakeprogress--invisible]="!showProgressbar"></div>
+  <div class="timeline-edit-list__blank-slate-info" [class.timeline-edit-list__blank-slate-info--invisible]="!showBlankSlate">
+    Tipp: Erfassen Sie neue Timelines über den Button oben rechts.
+  </div>
+</div>
