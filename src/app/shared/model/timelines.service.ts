@@ -31,9 +31,9 @@ export class TimelinesService {
 
     let timelineEvents = eventKeys
       .map(ept => ept.map( event => this.db.object('/events/'+ event.$key)))
-      .concatMap(fbObjObs => Observable.combineLatest(fbObjObs))
+      .flatMap(fbObjObs => Observable.combineLatest(fbObjObs))
       .map(items => items.sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())) as FirebaseListObservable<any[]>;
-    
+
     return timelineEvents;
   }
 
