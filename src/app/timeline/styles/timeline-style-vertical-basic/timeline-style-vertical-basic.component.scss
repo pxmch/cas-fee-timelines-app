@@ -1,11 +1,15 @@
 @import '../../../../styles/media-queries';
 @import '../../../../styles/mixins';
 
+.event-list__wrapper {
+  position: relative;
+}
+
 .event-box__timeline {
   position: absolute;
   left: calc(50% - 2px);
-  top: 24px;
-  bottom: 24px;
+  top: 0;
+  bottom: 0;
   border-left: 4px solid #555;
 
   @include phone {
