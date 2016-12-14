@@ -52,11 +52,17 @@
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
   transition: min-width 300ms;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
     min-width: 200px;
   }
 
-  &.event-item--right:hover {
+  &.event-item--right:hover,
+  &.event-item--right:focus,
+  &.event-item--right:active {
+    cursor: pointer;
     min-width: 100px;
   }
 
@@ -101,15 +107,21 @@
   background-color: rgba(255,255,255,0.95);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 
-  .event-item:hover & {
+  .event-item:hover &,
+  .event-item:focus &,
+  .event-item:active &{
     display: block;
+    cursor: pointer;
     min-width: 200px;
     padding: 6px;
   }
 
-  .event-item--right:hover & {
+  .event-item--right:hover &,
+  .event-item--right:focus &,
+  .event-item--right:active & {
     left: -100px;
     width: 200px;
+    cursor: pointer;
   }
 
   h4 {
