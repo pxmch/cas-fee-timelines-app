@@ -56,3 +56,12 @@ b {
   white-space: nowrap;
   width: 1px;
 }
+
+ul.bullet-list {
+  padding-left: 8px;
+
+  li {
+    margin-left: 12px;
+    list-style-type: square;
+  }
+}
