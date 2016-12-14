@@ -22,7 +22,7 @@ export class TimelineListComponent implements OnInit {
   ngOnInit() {
     switch (this.mode) {
       case "newest":
-        this.timelines = this.timelinesService.getNewestTimelines(this.count);
+        this.timelines = this.timelinesService.getNewestPublicTimelines(this.count);
         break;
       case "popular":
         this.timelines = null;

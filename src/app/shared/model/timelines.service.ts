@@ -46,6 +46,16 @@ export class TimelinesService {
     });
   }
 
+  getNewestPublicTimelines(count = 10): Observable<Timeline[]> {
+    let timelines = this.db.list('/timelines', {
+      query: {
+        limitToLast: count,
+        orderByChild: 'created_date'
+      }
+    });
+    return timelines.map(timelines => timelines.filter(timeline => timeline.is_public == true));
+  }
+
   getTimelinesForUser(key: string) : Observable<Timeline[]> {  
     let userKeys = this.db.list('timelinesPerUser/'+key);  
 
