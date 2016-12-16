@@ -29,8 +29,9 @@ export class LoginComponent {
         this.message = 'Anmeldung erfolgreich. Sie werden gleich weitergeleitet.';
         this.router.navigate(['/timeline-manager'])
       },
-      () => {
-        this.message = 'Anmeldung fehlgeschlagen. Bitte nochmals probieren.';
+      error => {
+        const msg = (error.message !== undefined) ? ": "+error.message : ".";
+        this.message = 'Anmeldung fehlgeschlagen'+msg;
       }
     );
 

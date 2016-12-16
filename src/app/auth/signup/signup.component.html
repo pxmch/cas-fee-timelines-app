@@ -3,25 +3,26 @@
   Registrieren Sie sich kostenlos, um selbst Timelines anzulegen.<br>
   Bitte füllen Sie alle Felder aus.
 </p>
-<form (ngSubmit)="onSubmit()" #registerForm="ngForm" class="register-mask">
-  <div *ngIf="message">{{message}}</div>
-  <div class="mdl-textfield mdl-js-textfield register-mask__field">
-    <input id="username" name="username" type="text" [(ngModel)]="username" class="mdl-textfield__input">
-    <label class="mdl-textfield__label" for="username">Name (Author der Timelines)</label>
+<div *ngIf="message">{{message}}</div>
+<form [formGroup]="signupForm" class="signup-mask" autocomplete="off" novalidate>
+  <div class="mdl-textfield mdl-js-textfield signup-mask__field">
+    <input id="userName" formControlName="userName" type="text" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="userName">Name (=Autor der Timelines)</label>
   </div>
-  <div class="mdl-textfield mdl-js-textfield register-mask__field">
-    <input id="userId" name="userId" type="email" [(ngModel)]="userId" class="mdl-textfield__input">
+  <div class="mdl-textfield mdl-js-textfield signup-mask__field">
+    <input id="userId" formControlName="userId" type="email" class="mdl-textfield__input">
     <label class="mdl-textfield__label" for="userId">E-Mail</label>
   </div>
-  <div class="mdl-textfield mdl-js-textfield register-mask__field">
-    <input id="passwd" name="passwd" type="password" [(ngModel)]="passwd" class="mdl-textfield__input">
+  <div class="mdl-textfield mdl-js-textfield signup-mask__field">
+    <input id="passwd" formControlName="passwd" type="password" class="mdl-textfield__input">
     <label class="mdl-textfield__label" for="passwd">Passwort</label>
   </div>
-  <div class="mdl-textfield mdl-js-textfield register-mask__field">
-    <input id="passwdConfirm" name="passwdConfirm" type="password" [(ngModel)]="passwdConfirm" class="mdl-textfield__input">
-    <label class="mdl-textfield__label" for="passwdConfirm">Passwort wiederholen</label>
+  <div class="mdl-textfield mdl-js-textfield signup-mask__field">
+    <input id="passwdconf" formControlName="passwdconf" type="password" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="passwdconf">Passwort bestätigen</label>
   </div>
-  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent register-mask__button">
-    Account eröffnen
+  <button (click)="signup()" [disabled]="!isFilledCorrectly()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent signup-mask__button">
+    Account erstellen
   </button>
 </form>
+

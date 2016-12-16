@@ -25,6 +25,10 @@ export class LoginService {
     this.router.navigate([''])
   }
 
+  signup(name, email, password) {
+    return this.af.auth.createUser({email, password});
+  }
+
   getUserId() {
     return this.loginStatus.value.getUserId();
   }
