@@ -23,6 +23,7 @@ export class TimelineManagerComponent implements OnInit {  
 
     ngOnInit() {
       let fakeProgressTimer = setTimeout(() => { this.showProgressbar = false, this.showBlankSlate = true }, 5000);
+      
       this.timelinesForUser = this.timelinesService.getTimelinesForUser(this.loginService.getUserId());
       this.timelinesForUser.subscribe(
         () => {

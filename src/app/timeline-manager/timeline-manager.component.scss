@@ -1,4 +1,5 @@
 @import '../../styles/media-queries';
+@import '../../styles/mixins';
 
 .page-actions {
   margin: 12px 0 24px;
@@ -8,7 +9,7 @@
 .timeline-edit-list-wrapper {
   position: relative;
   overflow: auto;
-  min-height: 55px;
+  min-height: 100px;
 }
 
 .timeline-edit-list {
@@ -63,7 +64,7 @@
   z-index: 1;
   width: 100%;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   color: #999;
 }
 
