@@ -26,7 +26,7 @@
     },
     "users": {
       "$user" : {
-        ".read": "false",
+        ".read": "$user == auth.uid",
         ".write": "$user == auth.uid"
       }
     }

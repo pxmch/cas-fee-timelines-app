@@ -8,11 +8,12 @@ export class Timeline {
     public is_public: boolean,
     public last_changed: Date,
     public style_theme: boolean,
+    public author: string
   ){
 
   }
 
-  static fromJson({$key, title, description, created_date, is_public, last_changed, style_theme}): Timeline {
+  static fromJson({$key, title, description, created_date, is_public, last_changed, style_theme, author}): Timeline {
     return new Timeline(
       $key,
       title,
@@ -20,7 +21,8 @@ export class Timeline {
       created_date,
       is_public,
       last_changed,
-      style_theme
+      style_theme,
+      author
     );
   }
 

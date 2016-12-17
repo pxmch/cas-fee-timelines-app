@@ -68,9 +68,9 @@ export class TimelinesService {
     return timelinesForUser;
    }
 
-  createTimeline(userId: string, timeline: any) : Observable<any> {
+  createTimeline(userId: string, userName: string, timeline: any) : Observable<any> {
     const ctime = new Date().toISOString();
-    const timelineData = Object.assign({}, timeline, {last_changed: ctime, created_date: ctime });
+    const timelineData = Object.assign({}, timeline, {last_changed: ctime, created_date: ctime, author: userName});
 
     const generatedKey = this.fbRef.child('timelines').push().key;
 
@@ -169,5 +169,18 @@ export class TimelinesService {
       );
     return subject.asObservable();
   }
+
+  /*
+  getUserName(userId: string): string {
+    const user = this.db.object('/users/'+userId);
+    let name = '';
+
+    user.subscribe(
+      usr => name = usr.alias
+    );
+
+    return name;
+  }
+  */
 
 }

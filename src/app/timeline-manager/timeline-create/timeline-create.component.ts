@@ -17,7 +17,7 @@ export class TimelineCreateComponent implements OnInit {
   }
 
   save(form) {
-    this.timelinesService.createTimeline(this.loginService.getUserId(), form.getFormValue())
+    this.timelinesService.createTimeline(this.loginService.getUserId(), this.loginService.getUserName(), form.getFormValue())
       .subscribe(
         val => {
           this.router.navigateByUrl('/timeline-manager/edit/'+val);

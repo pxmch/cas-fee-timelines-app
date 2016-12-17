@@ -23,7 +23,7 @@
       }"></span>
   </div>
   <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-typography--text-right mdl-cell--bottom">
-    Publiziert am {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }}<br>von Mrs. Tester
+    Publiziert am {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }}<br>von {{ (timeline | async)?.author }}
   </div>
   <div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-color--white event-box">
     <timeline [showMetadata]=false></timeline>
