@@ -3,11 +3,12 @@ import {BehaviorSubject} from "rxjs/Rx";
 import {AngularFire} from "angularfire2/angularfire2";
 import {LoginStatus} from "./helper/login-status";
 import {Router} from '@angular/router';
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class LoginService {
 
-  loginStatus: BehaviorSubject<LoginStatus> = new BehaviorSubject<LoginStatus>(new LoginStatus(null));
+  public loginStatus: BehaviorSubject<LoginStatus> = new BehaviorSubject<LoginStatus>(new LoginStatus(null));
 
   constructor(private af: AngularFire, private router: Router) {
     this.af.auth.subscribe(
@@ -25,8 +26,14 @@ export class LoginService {
     this.router.navigate([''])
   }
 
-  signup(name, email, password) {
+  signup(email, password): firebase.Promise {
     return this.af.auth.createUser({email, password});
+  }
+
+  setupUser(name = 'Anonymous'): firebase.Promise {
+    const uid = this.getUserId();
+    const itemObservable = this.af.database.object('/users/' + uid);
+    return itemObservable.update({alias: name});
   }
 
   getUserId() {

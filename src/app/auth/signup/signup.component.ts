@@ -11,6 +11,7 @@ import {LoginService} from "../services/login.service.ts";
 export class SignupComponent {
 
   private message = '';
+  private isSignedUp = false;
   private signupForm: FormGroup;
 
   constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) {
@@ -20,19 +21,21 @@ export class SignupComponent {
       passwd: ['', Validators.required],
       passwdconf: ['', Validators.required]
     });
+
+    /* signup form should not be displayed to logged in users */
+    this.loginService.loginStatus.subscribe(status => this.isSignedUp = status.isLoggedIn());
   }
 
   signup() {
     this.message = '';
     const formVal = this.signupForm.value;
-    this.loginService.signup(formVal.userName, formVal.userId, formVal.passwd).then(
-      user => {
-        console.log(user);
-        this.message = 'Registrierung erfolgreich. Sie werden gleich weitergeleitet.';
-        this.router.navigate(['login'])
+    this.loginService.signup(formVal.userId, formVal.passwd).then(
+      () => {
+        this.message = '';
+        this.isSignedUp = true;
+        this.loginService.setupUser(formVal.userName);
       },
       err => {
-        console.log(err);
         this.message = 'Registrierung fehlgeschlagen: ' + err.message;
       }
     );
