@@ -36,6 +36,18 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   @include hyphenate;
+
+  @include tablet {
+    font-size: 24px;
+  }
+  @include desktop {
+    font-size: 22px;
+  }
+
+  @include phone-tablet {
+    font-size: 22px;
+  }
+
 }
 
 .card__title,
