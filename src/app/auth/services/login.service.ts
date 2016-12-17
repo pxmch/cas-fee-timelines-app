@@ -27,11 +27,11 @@ export class LoginService {
     this.router.navigate([''])
   }
 
-  signup(email, password): firebase.Promise {
+  signup(email, password): firebase.Promise<any> {
     return this.af.auth.createUser({email, password});
   }
 
-  setupUser(name = 'Anonymous'): firebase.Promise {
+  setupUser(name = 'Anonymous'): firebase.Promise<any> {
     const uid = this.getUserId();
     const itemObservable = this.af.database.object('/users/' + uid);
     return itemObservable.update({alias: name});
