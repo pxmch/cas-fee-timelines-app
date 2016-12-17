@@ -16,7 +16,7 @@
         ".read": "true",
         ".write": "auth != null && !data.exists() || root.child('timelinesPerUser').child(auth.uid).child($timeline).exists()"
       },
-      ".indexOn": ["created_date"]
+      ".indexOn": ["created_date", "last_changed"]
     },
     "timelinesPerUser" : {
       "$tpu" : {

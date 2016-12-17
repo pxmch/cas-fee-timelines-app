@@ -37,23 +37,30 @@ export class TimelinesService {
     return timelineEvents;
   }
 
-  getNewestTimelines(count = 10): Observable<Timeline[]> {
-    return this.db.list('/timelines', {
-      query: {
-        limitToLast: count,
-        orderByChild: 'created_date'
-      }
-    });
-  }
-
   getNewestPublicTimelines(count = 10): Observable<Timeline[]> {
     let timelines = this.db.list('/timelines', {
       query: {
-        limitToLast: count,
+        limitToLast: count + 10,
         orderByChild: 'created_date'
       }
     });
-    return timelines.map(timelines => timelines.filter(timeline => timeline.is_public == true));
+    return timelines
+            .map(timelines => timelines.filter(timeline => timeline.is_public == true))
+            .map((array) => array.reverse())
+            .map((array) => array.slice(0,count)) as FirebaseListObservable<any[]>;
+  }
+
+  getLastChangedPublicTimelines(count = 10): Observable<Timeline[]> {
+    let timelines = this.db.list('/timelines', {
+      query: {
+        limitToLast: count + 10,
+        orderByChild: 'last_changed'
+      }
+    });
+    return timelines
+      .map(timelines => timelines.filter(timeline => timeline.is_public == true))
+      .map((array) => array.reverse())
+      .map((array) => array.slice(0,count)) as FirebaseListObservable<any[]>;
   }
 
   getTimelinesForUser(key: string) : Observable<Timeline[]> {  

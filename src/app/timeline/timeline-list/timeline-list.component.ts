@@ -12,7 +12,7 @@ import {Timeline} from "../../shared/model/timeline";
 export class TimelineListComponent implements OnInit {
 
   @Input('cssclasses') cssclasses = "";
-  @Input('count') count = 6;
+  @Input('count') count = 8;
   @Input('mode') mode = 'newest';
 
   timelines: Observable<Timeline[]>;
@@ -24,8 +24,8 @@ export class TimelineListComponent implements OnInit {
       case "newest":
         this.timelines = this.timelinesService.getNewestPublicTimelines(this.count);
         break;
-      case "popular":
-        this.timelines = null;
+      case "lastchanged":
+        this.timelines = this.timelinesService.getLastChangedPublicTimelines(this.count);
         break;
       default:
         this.timelines = null;
