@@ -9,9 +9,10 @@
       "title" : "Event 1"
     },
     "-KX6AgFnN_l5BOaaCgYI" : {
-      "date_display_format" : "MMM yyyy",
+      "date_display_format" : "yyyy",
       "description" : "Beschr 2",
       "end_date" : "",
+      "last_changed" : "2016-12-09T21:22:18.026Z",
       "start_date" : "2016-11-12",
       "title" : "Event 2"
     },
@@ -126,58 +127,65 @@
       "date_display_format" : "yyyy",
       "description" : "",
       "end_date" : "2008-12-31",
+      "last_changed" : "2016-12-10T01:00:41.201Z",
       "start_date" : "2005-01-01",
-      "title" : "Behindertengerechter Ausbau der Passage Sihlquai."
+      "title" : "Behindertengerechter Ausbau der Passage Sihlquai"
     },
     "-KY5Xca1bG8Nmbj27Gt1" : {
       "date_display_format" : "yyyy",
       "description" : "",
       "end_date" : "2014-12-31",
+      "last_changed" : "2016-12-10T01:00:49.612Z",
       "start_date" : "2007-01-01",
-      "title" : "Bauarbeiten für den Durchgangsbahnhof Löwenstrasse."
+      "title" : "Bauarbeiten für den Durchgangsbahnhof Löwenstrasse"
     },
     "-KY5XvbYHg_VK11rTbIm" : {
       "date_display_format" : "yyyy",
       "description" : "",
       "end_date" : "2014-12-31",
+      "last_changed" : "2016-12-10T01:00:55.913Z",
       "start_date" : "2007-01-01",
-      "title" : "Erstellen des Weinbergtunnels."
+      "title" : "Erstellen des Weinbergtunnels"
     },
     "-KY5Y3lGxoG5n37hQpVV" : {
       "date_display_format" : "yyyy",
       "description" : "",
       "end_date" : "2014-12-31",
+      "last_changed" : "2016-12-10T01:01:01.797Z",
       "start_date" : "2007-01-01",
-      "title" : "Erweiterung des Bahneinschnittes Oerlikon."
+      "title" : "Erweiterung des Bahneinschnittes Oerlikon"
     },
     "-KY5YFEtlYSSXXOIolQu" : {
       "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
+      "last_changed" : "2016-12-10T01:01:11.513Z",
       "start_date" : "2014-06-15",
-      "title" : "Eröffnung und Inbetriebnahme des ersten Teils der Durchmesserlinie von Wiedikon über den Bahnhof Löwenstrasse bis Oerlikon."
+      "title" : "Eröffnung und Inbetriebnahme des ersten Teils der Durchmesserlinie von Wiedikon über den Bahnhof Löwenstrasse bis Oerlikon"
     },
     "-KY5Yb9hpTuERpHQDRhd" : {
       "date_display_format" : "yyyy",
       "description" : "",
       "end_date" : "2015-12-31",
+      "last_changed" : "2016-12-10T01:01:21.973Z",
       "start_date" : "2008-01-01",
-      "title" : "Erstellen von Letzigraben- und Kohlendreieckbrücke."
+      "title" : "Erstellen von Letzigraben- und Kohlendreieckbrücke"
     },
     "-KY5YlJoa4-vRzkwY63W" : {
       "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
+      "last_changed" : "2016-12-10T01:01:33.020Z",
       "start_date" : "2015-12-13",
-      "title" : "Eröffnung und Inbetriebnahme des zweiten Teils der Durchmesserlinie von Altstetten bis Bahnhof Löwenstrasse."
+      "title" : "Eröffnung und Inbetriebnahme des zweiten Teils der Durchmesserlinie von Altstetten bis Bahnhof Löwenstrasse"
     },
     "-KY5Z8FjU8xA9jtbsfMR" : {
-      "date_display_format" : "yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "",
       "end_date" : "",
-      "last_changed" : "2016-12-03T21:22:27.896Z",
-      "start_date" : "2016-01-01",
-      "title" : "Im Herbst Abschluss des Bahnhofausbaus in Oerlikon."
+      "last_changed" : "2016-12-14T09:55:39.436Z",
+      "start_date" : "2016-11-18",
+      "title" : "Abschluss des Bahnhofausbaus in Oerlikon"
     },
     "-KY5aJjBHHaHafz5xi7X" : {
       "date_display_format" : "dd.MM.yyyy",
@@ -224,8 +232,9 @@
     },
     "-KY5e0Q_tv9rtwn5nIlt" : {
       "date_display_format" : "MM.yyyy",
-      "description" : "n der zweiten Novemberwoche engagiert Trump Katrina Pierson als Sprecherin seiner Kampagne.",
+      "description" : "In der zweiten Novemberwoche engagiert Trump Katrina Pierson als Sprecherin seiner Kampagne.",
       "end_date" : "",
+      "last_changed" : "2016-12-14T10:12:06.487Z",
       "start_date" : "2015-11-01",
       "title" : "Engagement von Katrina Pierson"
     },
@@ -466,9 +475,10 @@
       "title" : "Vorlage Gesetzesentwurf"
     },
     "-KYQkKTvrcGMQpCCBrV_" : {
-      "date_display_format" : "dd.mm.yyyy",
+      "date_display_format" : "dd.MM.yyyy",
       "description" : "55555",
       "end_date" : "2016-12-09",
+      "last_changed" : "2016-12-09T21:22:30.217Z",
       "start_date" : "2016-12-09",
       "title" : "4444"
     },
@@ -479,6 +489,70 @@
       "last_changed" : "2016-12-08T00:10:50.408Z",
       "start_date" : "2016-12-07",
       "title" : "555555"
+    },
+    "-KYjMvYV-I_EJyBW9p0m" : {
+      "date_display_format" : "dd.MM.yyyy",
+      "description" : "",
+      "end_date" : "2016-06-27",
+      "start_date" : "2016-05-04",
+      "title" : "Block 1 Grundlagenmodule (Tool = Webstorm, ohne Installation nach Abend 1)"
+    },
+    "-KYjN308xE35QsIu2Gie" : {
+      "date_display_format" : "dd.MM.yyyy",
+      "description" : "",
+      "end_date" : "",
+      "last_changed" : "2016-12-11T19:34:00.644Z",
+      "start_date" : "2016-05-04",
+      "title" : "Kick-Off und Install Fest (WebStorm, Chrome, Node, Git) Erste Schritte WebStorm+Node+Git"
+    },
+    "-KYjNOeUFrr2hF-Lb30q" : {
+      "date_display_format" : "dd.MM.yyyy",
+      "description" : "",
+      "end_date" : "2016-11-16",
+      "start_date" : "2016-07-06",
+      "title" : "Block2 Case Studies (Tools: Webstorm oder andere mit Installation)"
+    },
+    "-KYjNc1FjeIGWIBlArHK" : {
+      "date_display_format" : "dd.MM.yyyy",
+      "description" : "",
+      "end_date" : "2016-09-02",
+      "start_date" : "2016-09-01",
+      "title" : "Frontend Conference (Zürich)"
+    },
+    "-KYjNv2010Z7gJsbg-wT" : {
+      "date_display_format" : "dd.MM.yyyy",
+      "description" : "",
+      "end_date" : "2016-12-07",
+      "start_date" : "2016-11-23",
+      "title" : "Block 3 Vertiefungsthemen"
+    },
+    "-KYjO1SouWQeeCLKaSoz" : {
+      "date_display_format" : "dd.MM.yyyy",
+      "description" : "",
+      "end_date" : "",
+      "start_date" : "2016-12-14",
+      "title" : "Abschlussprüfung + Miniprojekt Präsentationen"
+    },
+    "-KYjO8fdZhtW4WMlQ8FA" : {
+      "date_display_format" : "dd.MM.yyyy",
+      "description" : "",
+      "end_date" : "",
+      "start_date" : "2017-01-18",
+      "title" : "Dozententreffen & Diplomfeier"
+    },
+    "-KYjOJXLmpCMKZxy0QYp" : {
+      "date_display_format" : "dd.MM.yyyy",
+      "description" : "",
+      "end_date" : "",
+      "start_date" : "2016-11-10",
+      "title" : "World Usability Day (HSR)"
+    },
+    "-KYjQO7mhxizS1J4vscq" : {
+      "date_display_format" : "dd.MM.yyyy",
+      "description" : "",
+      "end_date" : "",
+      "start_date" : "2016-06-24",
+      "title" : "CAS Front End Engineering Event mit gemeinsamem Nachtessen"
     }
   },
   "eventsPerTimeline" : {
@@ -560,83 +634,101 @@
       "-KY5qx4RI3YrEbn-WC5b" : true,
       "-KY5r7GGaPjShLuirpar" : true,
       "-KY5rK7UySS2rVwIhv4A" : true
+    },
+    "-KYjMJIfYIGx1w_thQ32" : {
+      "-KYjMvYV-I_EJyBW9p0m" : true,
+      "-KYjN308xE35QsIu2Gie" : true,
+      "-KYjNOeUFrr2hF-Lb30q" : true,
+      "-KYjNc1FjeIGWIBlArHK" : true,
+      "-KYjNv2010Z7gJsbg-wT" : true,
+      "-KYjO1SouWQeeCLKaSoz" : true,
+      "-KYjO8fdZhtW4WMlQ8FA" : true,
+      "-KYjOJXLmpCMKZxy0QYp" : true,
+      "-KYjQO7mhxizS1J4vscq" : true
     }
   },
   "timelines" : {
     "-KX6AYF7NTkPqfAoTnIj" : {
+      "author" : "Mrs. Tester",
       "created_date" : "2016-11-21T13:58:22.008Z",
       "description" : "Beschreibung",
-      "is_public" : true,
-      "last_changed" : "2016-12-08T00:10:38.892Z",
+      "is_public" : false,
+      "last_changed" : "2016-12-09T21:48:27.028Z",
       "style_theme" : "Horizontal, einfach",
-      "title" : "Die Timeline",
+      "title" : "Die Timeline"
     },
     "-KX8-p4IQqkXhIvVwuWa" : {
+      "author" : "Mrs. Tester",
       "created_date" : "2016-11-21T22:30:46.352Z",
       "description" : "Wichtige Etappen aus mehr als 75 Jahren Künzli Gärtnereibetriebe. Quelle: www.kuenzli-garten.ch",
       "is_public" : true,
-      "last_changed" : "2016-12-05T23:22:07.509Z",
-      "style_theme" : "Horizontal, einfach",
+      "last_changed" : "2016-12-13T00:11:01.675Z",
+      "style_theme" : "Vertikal, einfach",
       "title" : "Geschichte der Künzli Gärtnereibetriebe"
     },
     "-KX82d3s4b6HNUJ0RLye" : {
+      "author" : "Mrs. Tester",
       "created_date" : "2016-11-21T22:43:03.604Z",
       "description" : "Wichtige Etappen im Leben des Alan Touring.\n\nQuelle: https://de.wikipedia.org/wiki/Alan_Turing",
-      "is_public" : true,
-      "last_changed" : "2016-11-30T22:32:56.543Z",
+      "is_public" : false,
+      "last_changed" : "2016-12-14T10:25:28.501Z",
       "style_theme" : "Horizontal, einfach",
       "title" : "Der Lebenslauf von Alan Touring"
     },
     "-KY5WSkpcLzPiJVkz6fR" : {
+      "author" : "Mrs. Tester",
       "created_date" : "2016-12-03T21:10:11.022Z",
       "description" : "Kurze Chronologie des Bauwerks (Quelle: http://www.sbb.ch/sbb-konzern/ueber-die-sbb/projekte/ausbau-schienennetz/projekte-zuerich-ostschweiz/dml/zeithorizont.html)",
       "is_public" : true,
-      "last_changed" : "2016-12-05T21:21:48.373Z",
+      "last_changed" : "2016-12-15T10:39:07.194Z",
       "style_theme" : "Horizontal, einfach",
       "title" : "Durchmesserlinie Zürich"
     },
     "-KY5a4b_yAJ7hkJdxNLO" : {
+      "author" : "Mrs. Tester",
       "created_date" : "2016-12-03T21:30:22.846Z",
       "description" : "Chronologie des Wahlkampfs (Quelle: https://de.wikipedia.org/wiki/Donald_Trump#Pr.C3.A4sidentschaftskandidatur_2016)",
       "is_public" : true,
-      "last_changed" : "2016-12-05T23:05:17.931Z",
+      "last_changed" : "2016-12-11T14:26:51.573Z",
       "style_theme" : "Horizontal, einfach",
-      "title" : "Präsidentschaftskandidatur Trump 2016"
+      "title" : "Präsidentschafts-Kandidatur Trump 2016"
     },
     "-KY5mnhSWQ7ZY-VpMvrC" : {
+      "author" : "Mrs. Tester",
       "created_date" : "2016-12-03T22:25:57.518Z",
       "description" : "Chronologie der Ereignisse (Quelle: https://de.wikipedia.org/wiki/Eidgen%C3%B6ssische_Volksinitiative_%C2%ABGegen_Masseneinwanderung%C2%BB#Entstehung)",
       "is_public" : true,
-      "last_changed" : "2016-12-05T23:47:42.957Z",
+      "last_changed" : "2016-12-11T14:25:57.880Z",
       "style_theme" : "Horizontal, einfach",
-      "title" : "Masseneinwanderungsinitiative"
+      "title" : "Volksinitiative gegen Masseneinwanderung"
     },
-    "-KYQien3w3ItHJaJe3mU" : {
-      "created_date" : "2016-12-07T23:59:54.107Z",
-      "description" : "Beschreibung",
+    "-KYjMJIfYIGx1w_thQ32" : {
+      "author" : "Mrs. Tester",
+      "created_date" : "2016-12-11T19:30:15.714Z",
+      "description" : "Wichtige Meilensteine des Kurses",
       "is_public" : true,
-      "last_changed" : "2016-12-07T23:59:54.107Z",
-      "style_theme" : "Vertikal, einfach",
-      "title" : "Neue Timeline"
+      "last_changed" : "2016-12-14T09:52:45.904Z",
+      "style_theme" : "Horizontal, einfach",
+      "title" : "CAS Front End Engineering 2016"
     }
   },
   "timelinesPerUser" : {
-    "-KPio2Etua4oo1i73dfx" : {
+    "sZlCAMETIheQPJgiEj2CUQqnfk23" : {
       "-KX6AYF7NTkPqfAoTnIj" : true,
       "-KX8-p4IQqkXhIvVwuWa" : true,
       "-KX82d3s4b6HNUJ0RLye" : true,
       "-KY5WSkpcLzPiJVkz6fR" : true,
       "-KY5a4b_yAJ7hkJdxNLO" : true,
       "-KY5mnhSWQ7ZY-VpMvrC" : true,
-      "-KYQien3w3ItHJaJe3mU" : true
+      "-KYjMJIfYIGx1w_thQ32" : true
     }
   },
   "users" : {
-    "-KPio2Etua4oo1i73dfx" : {
-      "alias" : "Mr. Tester"
+    "O9cLSca0H2QzG4j7KF4LGOweJcK2" : {
+      "alias" : "John Doe"
+    },
+    "sZlCAMETIheQPJgiEj2CUQqnfk23" : {
+      "alias" : "Mrs. Tester"
     }
-  },
-  "authIdPerUser" : {
-    "sZlCAMETIheQPJgiEj2CUQqnfk23" : "-KPio2Etua4oo1i73dfx"
   }
 }
