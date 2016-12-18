@@ -12,6 +12,9 @@ There's a demo of this application hosted at https://timelines-9771d.firebaseapp
 <img src="demo/screenshot_1.png" alt="screenshot of the start page" width="400px"/>
 <img src="demo/screenshot_2.png" alt="screenshot of a detail page" width="400px"/>
 
+##Remarks
+- As for now, the application has only been tested in Chrome (Mac) and Safari (iOS) but should work in all modern browsers.
+
 ##Instructions
 
 ### Installation
