@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {Observable} from "rxjs/Rx";
 
 @Component({
@@ -7,13 +7,9 @@ import {Observable} from "rxjs/Rx";
   styleUrls: ['./timeline-style-vertical-basic.component.scss']
 })
 
-export class TimelineStyleVerticalBasicComponent implements OnInit {
+export class TimelineStyleVerticalBasicComponent{
 
   @Input() events: Observable<Event[]>
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

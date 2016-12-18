@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Observable} from "rxjs/Rx";
-import {Timeline} from "../../../shared/model/timeline";
+import { Observable } from "rxjs/Rx";
+import { Timeline } from "../../../shared/model/timeline";
 
 @Component({
   selector: 'timeline-style-horizontal-basic',
@@ -26,11 +26,11 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
     );
   }
 
-  setupTimeline(events) {
-    this.getTimelineDuration(events);
+  private setupTimeline(events) {
+    this.setTimelineDuration(events);
   }
 
-  getTimelineDuration(events): void {
+  private setTimelineDuration(events): void {
     let firstStartDate = events[0].start_date;
     let lastStartDate = events[0].start_date;
     let firstEndDate = events[0].start_date;
@@ -50,7 +50,7 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
     this.duration = new Date(this.end).getTime() - new Date(this.start).getTime();
   }
 
-  calcEventPosition(event_start, numberonly = false): any {
+  private calcEventPosition(event_start, numberonly = false): any {
     let eventStart = new Date(event_start).getTime();
     let eventStartDiff = eventStart - new Date(this.start).getTime();
 
@@ -59,7 +59,7 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
     return numberonly ? position : ''+ position +'%';
   }
 
-  calcEventDuration(event_start, event_end): string {
+  private calcEventDuration(event_start, event_end?): string {
     if(!event_end){
       return ''+this.markerMinSize+'px';
     };
@@ -74,8 +74,8 @@ export class TimelineStyleHorizontalBasicComponent implements OnInit {
     return '' + width + '%';
   }
 
-  isEventPositionRight(event_start): boolean {
+  private isEventPositionRight(event_start): boolean {
     return this.calcEventPosition(event_start, true) > 75 ? true : false;
   }
-
+  
 }

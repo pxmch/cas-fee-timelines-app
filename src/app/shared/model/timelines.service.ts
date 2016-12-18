@@ -169,18 +169,4 @@ export class TimelinesService {
       );
     return subject.asObservable();
   }
-
-  /*
-  getUserName(userId: string): string {
-    const user = this.db.object('/users/'+userId);
-    let name = '';
-
-    user.subscribe(
-      usr => name = usr.alias
-    );
-
-    return name;
-  }
-  */
-
 }

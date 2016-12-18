@@ -2,12 +2,16 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {ActivatedRoute} from '@angular/router';
 import {TimelinesService} from "../shared/model/timelines.service";
-import {Pipe} from '@angular/core';
+import {Directive, Input} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {By} from '@angular/platform-browser';
 
-import {TimelineComponent} from './timeline.component';
 import {Timeline} from "../shared/model/timeline";
+import {TimelineComponent} from './timeline.component';
+import {LinkyPipeMock} from "../shared/testing/linky-pipe-mock";
+import {TruncPipeMock} from "../shared/testing/trunc-pipe-mock";
+import {DatePipeMock} from "../shared/testing/date-pipe-mock";
+
 
 describe('TimelineComponent', () => {
   let component: TimelineComponent;
@@ -15,7 +19,7 @@ describe('TimelineComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TimelineComponent, DatePipeMock ],
+      declarations: [ TimelineComponent, DatePipeMock, TruncPipeMock, LinkyPipeMock, MockVerticalTimelineDirective, MockHorizontalTimelineDirective ],
       providers: [
         {provide: TimelinesService, useClass: TimelineServiceStub },
         {provide: ActivatedRoute, useClass: RouterStub }
@@ -27,7 +31,6 @@ describe('TimelineComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TimelineComponent);
     component = fixture.componentInstance;
-
     fixture.detectChanges();
   });
 
@@ -38,12 +41,16 @@ describe('TimelineComponent', () => {
   it('metadata should contain the correct title', () => {
     expect(fixture.debugElement.query(By.css('.timeline__metadata')).nativeElement.textContent).toContain('Test-Timeline');
   });
+
+  it('public timelines should not display an error message', () => {
+    expect(fixture.debugElement.query(By.css('timeline__message-private'))).toBe(null);
+  });
 });
 
 class TimelineServiceStub {
   public getTimelineByKey(id) {
     return new Observable(observer => {
-      observer.next(new Timeline('ABDC', 'Test-Timeline', '', new Date(), true, new Date()));
+      observer.next(new Timeline('THE_KEY', 'Test-Timeline', 'Beschreibung', new Date(), true, new Date(), 'Horizontal, einfach', 'Tester'));
       observer.complete();
     });
   }
@@ -51,22 +58,24 @@ class TimelineServiceStub {
 }
 
 class RouterStub {
-  public snapshot = { params: { id : 'ABCD'}}
+  public snapshot = { params: { id : 'THE_KEY'}}
 }
 
-/**
- * This mock is needed because the angular 2 built in date pipe
- * throws 'ReferenceError: Can't find variable: Intl' when running
- * tests with karma
- */
-@Pipe({
-  name: 'date',
-  pure: false // required to update the value when the promise is resolved
+@Directive({
+  selector: 'timeline-style-horizontal-basic'
 })
-export class DatePipeMock implements Pipe {
-  name: string = 'date';
+class MockHorizontalTimelineDirective {
+  @Input('events')
+  public events: Observable<Event[]>;
+  @Input('timeline')
+  public timeline: Observable<Timeline[]>;
+}
 
-  transform(query: string, ...args: any[]): any {
-    return query;
-  }
+
+@Directive({
+  selector: 'timeline-style-vertical-basic'
+})
+class MockVerticalTimelineDirective {
+  @Input('events')
+  public events: Observable<Event[]>;
 }

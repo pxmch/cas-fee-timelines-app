@@ -7,7 +7,7 @@ export class Timeline {
     public created_date: Date,
     public is_public: boolean,
     public last_changed: Date,
-    public style_theme: boolean,
+    public style_theme: string,
     public author: string
   ){
 
