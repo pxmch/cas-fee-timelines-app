@@ -34,6 +34,7 @@ export class SignupComponent {
         this.message = '';
         this.isSignedUp = true;
         this.loginService.setupUser(formVal.userName);
+        this.loginService.setUserName(this.loginService.getUserId());
       },
       err => {
         this.message = 'Registrierung fehlgeschlagen: ' + err.message;
